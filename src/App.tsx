@@ -1,5 +1,11 @@
+import StartUp from "./pages/StartUp";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <StartUp />
+    </>
+  );
 }
 
 export default App;
