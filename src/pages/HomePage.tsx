@@ -3,6 +3,7 @@ import ThemeSwitcher from "../components/ThemeSwitcher";
 import wallpaper from "../assets/wallpaper.jpg";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import NavBar from "../components/NavBar";
 
 interface Props {
   fade: boolean;
@@ -22,6 +23,7 @@ export default function HomePage({ fade }: Props) {
       }}
     >
       <div className={`w-screen h-screen ${theme}-aurora-inner`}>
+        <NavBar />
         <Clock />
         <ThemeSwitcher />
 

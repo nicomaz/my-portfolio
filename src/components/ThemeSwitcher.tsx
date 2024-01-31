@@ -7,13 +7,13 @@ const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
   const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
-    <div className="absolute top-5 left-5 z-30">
+    <div className="absolute top-2 left-5 z-30">
       <h2 onClick={() => toggleTheme()}>
         {theme === "dark" ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
+            width="18"
+            height="18"
             fill="white"
             className="bi bi-brightness-high"
             viewBox="0 0 16 16"
@@ -23,8 +23,8 @@ const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             fill="black"
             className="bi bi-moon-stars"
             viewBox="0 0 16 16"
