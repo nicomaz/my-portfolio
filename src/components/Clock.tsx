@@ -11,7 +11,7 @@ export default function Clock() {
     setTime(getTime());
   }, []);
 
-  setInterval(() => setTime(getTime()), 1000);
+  setTimeout(() => setTime(getTime()), 1000);
 
   return (
     <div className={`${theme}`}>
