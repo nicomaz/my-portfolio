@@ -13,7 +13,7 @@ export default function HomePage({ fade }: Props) {
   return (
     <div
       className={`
-  ${theme} w-screen h-screen sm:pb-44 ${theme}-aurora-outer `}
+  ${theme} w-screen h-screen sm:pb-44`}
       style={{
         backgroundImage: `url(${wallpaper})`,
         height: "100vh",
@@ -22,7 +22,7 @@ export default function HomePage({ fade }: Props) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className={`w-screen h-screen ${theme}-aurora-inner`}>
+      <div className="w-screen h-screen ">
         <NavBar />
         <Clock />
         <ThemeSwitcher />
