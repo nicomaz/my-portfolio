@@ -8,8 +8,10 @@ export default function Clock() {
   const [time, setTime] = useState<string>();
 
   useEffect(() => {
-    setInterval(() => setTime(getTime()), 1000);
+    setTime(getTime());
   }, []);
+
+  setInterval(() => setTime(getTime()), 1000);
 
   return (
     <div className={`${theme}`}>

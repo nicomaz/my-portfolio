@@ -3,17 +3,67 @@
 @tailwind utilities;
 
 :root {
+  background-color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* .page-enter {
+  opacity: 1;
+
+} */
+
+.page-enter::after {
+  transition: all 1000ms ease-in-out;
+  opacity: 1;
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(9px) saturate(200%) opacity(1);
+  -webkit-backdrop-filter: blur(9px) saturate(200%) opacity(1);
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+.page-enter-active::after {
+  opacity: 0;
+}
+
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 1;
+  /* transform: scale(0.98); */
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(0.9);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1000ms, transform 1000ms;
 }
 
 .glass {
   backdrop-filter: blur(9px) saturate(200%);
   -webkit-backdrop-filter: blur(9px) saturate(200%);
   background-color: rgba(255, 255, 255, 0.24);
-  border-radius: 20px;
 }
 
 .dark-aurora-outer {
