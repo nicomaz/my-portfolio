@@ -19,10 +19,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     localStorage.setItem("theme", val);
   };
 
-  useEffect(() => {
-    console.log("AA");
-  }, [theme]);
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
