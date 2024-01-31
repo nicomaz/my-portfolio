@@ -3,37 +3,54 @@
 @tailwind utilities;
 
 :root {
+  background-color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.fade {
+  animation: fade 300ms forwards;
+}
+
+.in {
+  animation: in 300ms forwards;
+}
+
+.quick-fade {
+  animation: quick-fade 300ms forwards;
 }
 
 .glass {
   backdrop-filter: blur(9px) saturate(200%);
   -webkit-backdrop-filter: blur(9px) saturate(200%);
   background-color: rgba(255, 255, 255, 0.24);
-  border-radius: 20px;
 }
 
 .dark-aurora-outer {
-  background: linear-gradient(45deg, #021625 0%, #155a85 49%, #061175 82%);
+  background: linear-gradient(45deg, #260ec1 0%, #155a85 49%, #061175 82%);
   background-size: 200%;
   animation: aurora 10s infinite;
+  backdrop-filter: saturate(150%);
+  -webkit-backdrop-filter: saturate(150%);
 }
 
 .dark-aurora-inner {
   background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
   background-size: 200%;
   animation: aurora 7s infinite;
-  backdrop-filter: blur(9px) saturate(200%);
-  -webkit-backdrop-filter: blur(9px) saturate(200%);
+  backdrop-filter: saturate(150%);
+  -webkit-backdrop-filter: saturate(150%);
 }
 
 .light-aurora-outer {
   background: linear-gradient(45deg, #719fc9 0%, #a4d6f5 49%, #b6b4f4 82%);
   background-size: 200%;
   animation: aurora 10s infinite;
+  backdrop-filter: saturate(150%);
+  -webkit-backdrop-filter: saturate(150%);
 }
 
 .light-aurora-inner {
@@ -43,8 +60,8 @@
   );
   background-size: 200%;
   animation: aurora 7s infinite;
-  backdrop-filter: blur(9px) saturate(200%);
-  -webkit-backdrop-filter: blur(9px) saturate(200%);
+  backdrop-filter: saturate(150%);
+  -webkit-backdrop-filter: saturate(150%);
 }
 
 @keyframes aurora {
@@ -62,5 +79,36 @@
   }
   100% {
     background-position: left top;
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+@keyframes quick-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
