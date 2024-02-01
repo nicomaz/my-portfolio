@@ -6,7 +6,7 @@ interface Props {
   fade: boolean;
 }
 
-export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
+export default function Header({ appOpen = "Portfolio", fade }: Props) {
   return (
     <div
       className={
@@ -38,7 +38,9 @@ export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
         </span>
       </div>
       <span
-        className={fade ? "time-down absolute right-0" : " top-0 absolute right-0"}
+        className={
+          fade ? "time-down absolute right-0" : " top-0 absolute right-0"
+        }
       >
         <Clock />
       </span>

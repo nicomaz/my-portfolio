@@ -2,7 +2,7 @@ import Clock from "../components/Clock";
 import wallpaper from "../assets/wallpaper.jpg";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 
 interface Props {
   fade: boolean;
@@ -22,7 +22,7 @@ export default function HomePage({ fade }: Props) {
       }}
     >
       <div className="w-screen h-screen ">
-        <NavBar fade={fade} />
+        <Header fade={fade} />
         {fade ? null : (
           <>
             <Clock />
