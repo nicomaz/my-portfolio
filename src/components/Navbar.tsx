@@ -23,7 +23,7 @@ export default function Navbar({ fade }: Props) {
           <NavbarIcons icon={finder} name="Finder" alt="apple finder icon" />
         </li>
         <li>
-          <NavbarIcons icon={notepad} name="notepad" alt="notepad" />
+          <NavbarIcons icon={notepad} name="Notes" alt="notepad" />
         </li>
         <li>
           <NavbarIcons icon={safari} name="Safari" alt="safari browser" />
@@ -31,12 +31,12 @@ export default function Navbar({ fade }: Props) {
         <li>
           <NavbarIcons
             icon={contacts}
-            name="contacts"
+            name="Contacts"
             alt="apple contacts icon"
           />
         </li>
         <li>
-          <NavbarIcons icon={calculator} name="calculator" alt="calculator" />
+          <NavbarIcons icon={calculator} name="Calculator" alt="calculator" />
         </li>
       </ul>
     </div>
