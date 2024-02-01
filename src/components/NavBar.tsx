@@ -1,12 +1,40 @@
+import Clock from "./Clock";
+import ThemeSwitcher from "./ThemeSwitcher";
+
 interface Props {
   appOpen: string;
+  fade: boolean;
 }
-export default function NavBar({ appOpen = "Portfolio" }: Props) {
+
+export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
+  console.log(fade);
   return (
-    <div className="bg-white/[0.1] backdrop-blur-[1px] h-8 w-screen shadow drop-shadow-lg backdrop-blur-[3px] h-shadow">
-      <div className="flex flex-row justify-between pt-1 w-screen px-6 absolute ">
-        <span className="absolute top-1 left-16 text-base font-semibold dark:text-white">{appOpen}</span>
+    <div
+      className={
+        fade
+          ? "down bg-white/[0.1] backdrop-blur-[1px] w-screen shadow drop-shadow-lg backdrop-blur-[3px] h-shadow"
+          : "bg-white/[0.1] backdrop-blur-[1px] h-8 w-screen shadow drop-shadow-lg backdrop-blur-[3px] h-shadow"
+      }
+    >
+      <div>
+        <span
+          className={
+            fade
+              ? "relative icon-down text-base font-semibold dark:text-white left-5 gap-5 flex flex-row w-full"
+              : "relative text-base font-semibold dark:text-white left-5 gap-5 top-2 flex flex-row w-full"
+          }
+        >
+          <span>
+            <ThemeSwitcher fade={fade} />
+          </span>
+        </span>
+        <span className="text-down relative left-16 dark:text-white">
+          {appOpen}
+        </span>
       </div>
+      <span className="time-down absolute right-0">
+        <Clock fade={fade} />
+      </span>
     </div>
   );
 }

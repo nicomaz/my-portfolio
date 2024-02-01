@@ -30,8 +30,9 @@ export default function StartUpPage({ fade, setFade }: Props) {
       }}
     >
       <Clock />
-      <ThemeSwitcher />
-
+      <div className="absolute top-2 left-5 z-30">
+        <ThemeSwitcher />
+      </div>
       <div
         className={
           fade

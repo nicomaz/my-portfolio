@@ -23,11 +23,12 @@ export default function HomePage({ fade }: Props) {
       }}
     >
       <div className="w-screen h-screen ">
-        <NavBar />
-        <Clock />
-        <ThemeSwitcher />
-
-        <div className={fade ? "in" : ""}> </div>
+        <NavBar fade={fade} />
+        {fade ? null : (
+          <>
+            <Clock />
+          </>
+        )}
       </div>
     </div>
   );

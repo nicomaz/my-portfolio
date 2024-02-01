@@ -23,6 +23,22 @@
   animation: quick-fade 300ms forwards;
 }
 
+.down {
+  animation: down 1000ms forwards;
+}
+
+.text-down {
+  animation: text-down 1000ms forwards;
+}
+
+.icon-down {
+  animation: icon-down 1000ms forwards;
+}
+
+.time-down {
+  animation: time-down 1000ms forwards;
+}
+
 .glass {
   backdrop-filter: blur(9px) saturate(200%);
   -webkit-backdrop-filter: blur(9px) saturate(200%);
@@ -114,5 +130,45 @@
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes down {
+  0% {
+    height: 0px;
+    transform: scale(0.98);
+    opacity: 0.3;
+  }
+  100% {
+    height: 31px;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes icon-down {
+  from {
+    top: -25px;
+  }
+  to {
+    top: 8px;
+  }
+}
+
+@keyframes text-down {
+  from {
+    top: -45px;
+  }
+  to {
+    top: -13px;
+  }
+}
+
+@keyframes time-down {
+  from {
+    top: -45px;
+  }
+  to {
+    top: 1px;
   }
 }
