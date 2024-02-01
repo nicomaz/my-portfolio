@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
-
   return (
     <div
       className={
@@ -28,12 +27,20 @@ export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
             <ThemeSwitcher fade={fade} />
           </span>
         </span>
-        <span className="text-down relative left-16 dark:text-white">
+        <span
+          className={
+            fade
+              ? "text-down relative left-16 dark:text-white"
+              : "relative left-16 dark:text-white top-[-13px]"
+          }
+        >
           {appOpen}
         </span>
       </div>
-      <span className="time-down absolute right-0">
-        <Clock fade={fade} />
+      <span
+        className={fade ? "time-down absolute right-0" : " top-0 absolute right-0"}
+      >
+        <Clock />
       </span>
     </div>
   );
