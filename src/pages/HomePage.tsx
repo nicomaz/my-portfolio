@@ -1,5 +1,4 @@
 import Clock from "../components/Clock";
-import ThemeSwitcher from "../components/ThemeSwitcher";
 import wallpaper from "../assets/wallpaper.jpg";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
@@ -13,7 +12,7 @@ export default function HomePage({ fade }: Props) {
   return (
     <div
       className={`
-  ${theme} w-screen h-screen sm:pb-44 ${theme}-aurora-outer `}
+  ${theme} w-screen h-screen sm:pb-44`}
       style={{
         backgroundImage: `url(${wallpaper})`,
         height: "100vh",
@@ -22,12 +21,13 @@ export default function HomePage({ fade }: Props) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className={`w-screen h-screen ${theme}-aurora-inner`}>
-        <NavBar />
-        <Clock />
-        <ThemeSwitcher />
-
-        <div className={fade ? "in" : ""}> </div>
+      <div className="w-screen h-screen ">
+        <NavBar fade={fade} />
+        {fade ? null : (
+          <>
+            <Clock />
+          </>
+        )}
       </div>
     </div>
   );

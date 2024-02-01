@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-interface Props {}
+interface Props {
+  fade: boolean;
+}
 
-const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
+export default function ThemeSwitcher({ fade }: Props) {
   const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
-    <div className="absolute top-2 left-5 z-30">
+    <div className={fade ? "text-down left-5" : "left-5 z-30"}>
       <h2 onClick={() => toggleTheme()}>
         {theme === "dark" ? (
           <svg
@@ -36,6 +38,4 @@ const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
       </h2>
     </div>
   );
-};
-
-export default ThemeSwitcher;
+}

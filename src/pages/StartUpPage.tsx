@@ -20,7 +20,7 @@ export default function StartUpPage({ fade, setFade }: Props) {
   return (
     <div
       className={`
-    ${theme} w-screen h-screen sm:pb-44 ${theme}-aurora-outer `}
+    ${theme} w-screen h-screen sm:pb-44`}
       style={{
         backgroundImage: `url(${wallpaper})`,
         height: "100vh",
@@ -29,38 +29,37 @@ export default function StartUpPage({ fade, setFade }: Props) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className={`w-screen h-screen ${theme}-aurora-inner`}>
-        <Clock />
+      <Clock />
+      <div className="absolute top-2 left-5 z-30">
         <ThemeSwitcher />
-
-        <div
-          className={
-            fade
-              ? "absolute quick-fade w-screen h-screen sm:pb-44 glass"
-              : " absolute w-screen h-screen sm:pb-44 glass"
-          }
+      </div>
+      <div
+        className={
+          fade
+            ? "absolute quick-fade w-screen h-screen sm:pb-44 glass"
+            : " absolute w-screen h-screen sm:pb-44 glass"
+        }
+      />
+      <div
+        className={
+          fade
+            ? ` fade flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
+            : `flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
+        }
+      >
+        <Icon
+          username="Nicola Mazuryk"
+          userIcon={mainIcon}
+          iconAlt="cover of Mezzanine by Massive Attack"
         />
-        <div
-          className={
-            fade
-              ? ` fade flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
-              : `flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
-          }
-        >
-          <Icon
-            username="Nicola Mazuryk"
-            userIcon={mainIcon}
-            iconAlt="cover of Mezzanine by Massive Attack"
-          />
 
-          <div
-            onClick={() => {
-              setFade(true);
-              setTimeout(() => navigate("/home"), 300);
-            }}
-          >
-            <Icon username="Guest" userIcon={guestIcon} iconAlt="suitcase" />
-          </div>
+        <div
+          onClick={() => {
+            setFade(true);
+            setTimeout(() => navigate("/home"), 300);
+          }}
+        >
+          <Icon username="Guest" userIcon={guestIcon} iconAlt="suitcase" />
         </div>
       </div>
     </div>
