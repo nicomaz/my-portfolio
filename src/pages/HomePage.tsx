@@ -23,7 +23,7 @@ export default function HomePage({ fade }: Props) {
     >
       <div className="w-screen h-screen ">
         <Header fade={fade} />
-        <Navbar />
+        <Navbar fade={fade}  />
       </div>
     </div>
   );
