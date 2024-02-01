@@ -2,7 +2,7 @@ import Clock from "./Clock";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 interface Props {
-  appOpen: string;
+  appOpen?: string;
   fade: boolean;
 }
 

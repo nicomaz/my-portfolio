@@ -1,5 +1,4 @@
 import Clock from "../components/Clock";
-import ThemeSwitcher from "../components/ThemeSwitcher";
 import wallpaper from "../assets/wallpaper.jpg";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
