@@ -29,9 +29,11 @@ export default function StartUpPage({ fade, setFade }: Props) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Clock />
-      <div className="absolute top-2 left-5 z-30">
-        <ThemeSwitcher />
+      <div className={fade ? "quick-fade" : ""}>
+        <Clock />
+        <div className="absolute top-2 left-5 z-30">
+          <ThemeSwitcher />
+        </div>
       </div>
       <div
         className={
