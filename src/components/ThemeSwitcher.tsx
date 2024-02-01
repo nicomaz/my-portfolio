@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 interface Props {
-  fade: boolean;
+  fade?: boolean;
 }
 
 export default function ThemeSwitcher({ fade }: Props) {

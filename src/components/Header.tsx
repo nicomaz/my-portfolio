@@ -6,13 +6,13 @@ interface Props {
   fade: boolean;
 }
 
-export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
+export default function Header({ appOpen = "Portfolio", fade }: Props) {
   return (
     <div
       className={
         fade
-          ? "down bg-white/[0.1] backdrop-blur-[1px] w-screen shadow drop-shadow-lg backdrop-blur-[3px] h-shadow"
-          : "bg-white/[0.1] backdrop-blur-[1px] h-8 w-screen shadow drop-shadow-lg backdrop-blur-[3px] h-shadow"
+          ? "down dark:bg-white/[0.2] bg-gray-200/[0.3]  backdrop-blur-[3px] w-screen  drop-shadow-lg h-shadow"
+          : "dark:bg-white/[0.2] bg-gray-200/[0.3]  backdrop-blur-[3px] h-8 w-screen  drop-shadow-lg h-shadow"
       }
     >
       <div>
@@ -38,7 +38,9 @@ export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
         </span>
       </div>
       <span
-        className={fade ? "time-down absolute right-0" : " top-0 absolute right-0"}
+        className={
+          fade ? "time-down absolute right-0" : " top-0 absolute right-0"
+        }
       >
         <Clock />
       </span>
