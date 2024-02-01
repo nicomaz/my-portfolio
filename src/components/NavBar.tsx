@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function NavBar({ appOpen = "Portfolio", fade }: Props) {
-  console.log(fade);
+
   return (
     <div
       className={
