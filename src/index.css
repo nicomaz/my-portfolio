@@ -28,7 +28,7 @@
   animation: down 1000ms forwards;
 }
 
-.up { 
+.up {
   animation: up 1000ms forwards;
 }
 
@@ -50,7 +50,7 @@
   background-color: rgba(255, 255, 255, 0.24);
 }
 
-/* aurora background */ 
+/* aurora background */
 .dark-aurora-outer {
   background: linear-gradient(45deg, #260ec1 0%, #155a85 49%, #061175 82%);
   background-size: 200%;
@@ -151,6 +151,7 @@
     opacity: 1;
   }
 }
+
 
 
 @keyframes up {

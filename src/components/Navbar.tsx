@@ -18,8 +18,8 @@ export default function Navbar({ fade }: Props) {
           : "absolute bottom-2 w-full flex justify-center "
       }
     >
-      <ul className="w-full lg:w-5/12 h-16 bg-white/[0.1] backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly">
-        <li>
+      <ul className="w-full lg:w-5/12 h-[4.5rem] bg-white/[0.1] backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly ">
+        <li className="after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white">
           <NavbarIcons icon={finder} name="Finder" alt="apple finder icon" />
         </li>
         <li>
