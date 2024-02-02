@@ -14,8 +14,8 @@ export default function Navbar({ fade }: Props) {
     <div
       className={
         fade
-          ? " up absolute bottom-2 w-full flex justify-center"
-          : "absolute bottom-2 w-full flex justify-center "
+          ? " up absolute bottom-0 sm:bottom-2 w-full flex justify-center"
+          : "absolute bottom-0 sm:bottom-2 w-full flex justify-center "
       }
     >
       <ul className="w-full lg:w-5/12 h-[4.9rem] dark:bg-white/[0.3] bg-gray-200/[0.3]  backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly items-center">

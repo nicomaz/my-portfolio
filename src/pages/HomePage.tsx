@@ -24,7 +24,7 @@ export default function HomePage({ fade }: Props) {
     >
       <div className="w-screen h-screen ">
         <Header fade={fade} />
-        <div className="flex justify-center items-center w-full h-[calc(100%-100px)]">
+        <div className="flex justify-center items-center h-[calc(100%-35vw)] sm:h-5/6">
           <Notes />
         </div>
         <Navbar fade={fade} />
