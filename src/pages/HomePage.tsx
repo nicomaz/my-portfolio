@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
+import Notes from "../components/Notes";
 
 interface Props {
   fade: boolean;
@@ -23,7 +24,10 @@ export default function HomePage({ fade }: Props) {
     >
       <div className="w-screen h-screen ">
         <Header fade={fade} />
-        <Navbar fade={fade}  />
+        <div className="flex justify-center items-center h-[calc(100%-35vw)] sm:h-5/6">
+          <Notes />
+        </div>
+        <Navbar fade={fade} />
       </div>
     </div>
   );
