@@ -13,7 +13,7 @@ export default function Browser() {
 
   return (
     <Draggable handle=".handle">
-      <div className="xl:w-4/6 xl:h-4/6 mx-2 h-5/6 w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 absolute">
+      <div className="xl:w-4/6 xl:h-4/6 mx-2 h-5/6 w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] absolute">
         <Media queries={{ small: { maxWidth: 599 } }}>
           {(matches) =>
             matches.small ? (

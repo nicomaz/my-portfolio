@@ -14,8 +14,8 @@ export default function ThemeSwitcher({ fade }: Props) {
         {theme === "dark" ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="16"
+            height="16"
             fill="white"
             className="bi bi-brightness-high"
             viewBox="0 0 16 16"
@@ -25,8 +25,8 @@ export default function ThemeSwitcher({ fade }: Props) {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="16"
+            height="16"
             fill="black"
             className="bi bi-moon-stars"
             viewBox="0 0 16 16"
