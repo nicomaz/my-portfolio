@@ -21,18 +21,19 @@ export default function Notes({
   const [noteClicked, setNoteClicked] = useState<number>(1);
   const [noteExpanded, setNoteExpanded] = useState<boolean>(false);
 
+  console.log(noteExpanded);
   return (
     <Draggable handle=".handle">
       <div
         className={
           notepadOpen
             ? noteMinimised && !noteExpanded
-              ? "hidden-anim xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+              ? "hidden-anim xl:w-4/6 xl:h-4/6 h-[calc(100%-79px-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : noteExpanded
               ? noteMinimised
-                ? "hidden-anim xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                : "xl:w-full xl:w-full h-full sm:h-full backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
-              : "xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6  backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                : "mx-0 h-[calc(100%-79px-2rem)] w-full sm:h-full backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
+              : "xl:w-4/6 xl:h-4/6 sm:h-4/6 h-[calc(100%-79px-2rem)] w-full backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
             : "hidden"
         }
       >

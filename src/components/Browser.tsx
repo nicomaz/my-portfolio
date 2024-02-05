@@ -30,19 +30,19 @@ export default function Browser({
         className={
           browserOpen
             ? browserMinimised && !browserExpanded
-              ? "hidden-anim mx-2 h-5/6 w-full xl:w-4/6 sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] "
+              ? "hidden-anim mx-2 h-[calc(100%-79px-2.5rem)] w-full xl:w-4/6 sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] absolute sm:relative"
               : browserExpanded
               ? browserMinimised
-                ? "hidden-anim w-full  mx-0 h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center"
-                : "mx-0 h-full w-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center"
-              : " xl:w-4/6 mx-2 h-5/6 w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] "
+                ? "hidden-anim w-full mx-0 h-[calc(100%-79px-2.5rem)] sm:h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center absolute sm:relative"
+                : "mx-0 h-[calc(100%-79px-2.5rem)] sm:h-full w-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center absolute sm:relative"
+              : " xl:w-4/6 mx-2 h-[calc(100%-79px-2.5rem)] w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8]  absolute sm:relative"
             : "hidden"
         }
       >
         <Media queries={{ small: { maxWidth: 599 } }}>
           {(matches) =>
             matches.small ? (
-              <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg relative">
+              <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
                 <Buttons
                   setWindowOpen={setBrowserOpen}
                   setWindowMinimised={setBrowserMinimised}
@@ -52,8 +52,8 @@ export default function Browser({
               </div>
             ) : (
               <>
-                <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg relative">
-                  <span className="handle w-[calc(100%-5rem)] col-span-3 h-10 ml-20 absolute handle" />
+                <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
+                  <span className="handle w-[calc(100%-5rem)] col-span-3 h-10 ml-20 absolute" />
                   <Buttons
                     setWindowOpen={setBrowserOpen}
                     setWindowMinimised={setBrowserMinimised}
