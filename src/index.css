@@ -50,6 +50,10 @@
   background-color: rgba(255, 255, 255, 0.24);
 }
 
+.hidden-anim {
+  animation: hide 0.5s forwards;
+}
+
 /* aurora background */
 .dark-aurora-outer {
   background: linear-gradient(45deg, #260ec1 0%, #155a85 49%, #061175 82%);
@@ -90,7 +94,25 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.215);
 }
 
+.center {
+  transform: translate(0px, 0px) !important;
+}
 
+@keyframes hide {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  99.9% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    visibility: collapse;
+  }
+}
 
 @keyframes aurora {
   0% {

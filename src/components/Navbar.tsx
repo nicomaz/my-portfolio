@@ -7,9 +7,17 @@ import calculator from "../assets/calculator.png";
 
 interface Props {
   fade: boolean;
+  setNotepadOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setNoteMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  notepadOpen: boolean;
 }
 
-export default function Navbar({ fade }: Props) {
+export default function Navbar({
+  fade,
+  setNotepadOpen,
+  notepadOpen,
+  setNoteMinimised,
+}: Props) {
   return (
     <div
       className={
@@ -22,7 +30,17 @@ export default function Navbar({ fade }: Props) {
         <li className="after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white">
           <NavbarIcons icon={finder} name="Finder" alt="apple finder icon" />
         </li>
-        <li>
+        <li
+          className={
+            notepadOpen
+              ? "after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white"
+              : ""
+          }
+          onClick={() => {
+            setNotepadOpen(true);
+            setNoteMinimised(false);
+          }}
+        >
           <NavbarIcons icon={notepad} name="Notes" alt="notepad" />
         </li>
         <li>
