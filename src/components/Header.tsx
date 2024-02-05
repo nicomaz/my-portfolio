@@ -11,8 +11,8 @@ export default function Header({ appOpen = "Portfolio", fade }: Props) {
     <div
       className={
         fade
-          ? "down dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-blur-[3px] w-screen  drop-shadow-lg h-shadow"
-          : "dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-saturate-50 backdrop-blur-[3px] h-8 w-screen  drop-shadow-lg h-shadow"
+          ? "down dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-blur-[3px] w-screen drop-shadow-lg h-shadow"
+          : "dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-blur-[3px] h-8 w-screen drop-shadow-lg h-shadow"
       }
     >
       <div>

@@ -20,11 +20,11 @@ export default function IndivNote({
 }: Props) {
   return (
     <div
-      className={
+      className={`w-full h-14 pl-3 pt-1 ${
         noteClicked === note.id
-          ? "w-full h-14 bg-blue-300 dark:bg-blue-900 pl-3 pt-1"
-          : "w-full h-14 bg-none dark:bg-none pl-3 pt-1"
-      }
+          ? "dark:bg-blue-900 bg-blue-300"
+          : "bg-none dark:bg-none"
+      }`}
       onClick={() => {
         setNoteClicked(note.id);
       }}

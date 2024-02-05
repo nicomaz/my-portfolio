@@ -5,7 +5,7 @@ interface Props {
 
 export default function BrowserMenu({ setShowTabs, showTabs }: Props) {
   return (
-    <div className="w-full h-[2.5rem] absolute bottom-0 rounded-b-lg  bg-[#ccd4e8]">
+    <div className="w-full h-[2.5rem] absolute bottom-0 rounded-b-lg bg-[#ccd4e8]">
       <div className="bottom-1 left-3 absolute">
         <span className="material-symbols-outlined mr-4">arrow_back_ios</span>
         <span className="material-symbols-outlined ml-6">

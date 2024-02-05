@@ -36,18 +36,14 @@ export default function StartUpPage({ fade, setFade }: Props) {
         </div>
       </div>
       <div
-        className={
-          fade
-            ? "absolute quick-fade w-screen h-screen sm:pb-44 glass"
-            : " absolute w-screen h-screen sm:pb-44 glass"
-        }
+        className={`${
+          fade ? "quick-fade" : ""
+        } absolute w-screen h-screen sm:pb-44 glass`}
       />
       <div
-        className={
-          fade
-            ? ` fade flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
-            : `flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`
-        }
+        className={`${
+          fade ? "fade" : ""
+        } flex flex-row justify-center gap-2 w-full h-full items-center flex-wrap`}
       >
         <Icon
           username="Nicola Mazuryk"
