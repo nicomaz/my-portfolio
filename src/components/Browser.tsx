@@ -40,7 +40,12 @@ export default function Browser() {
         <Media queries={{ small: { maxWidth: 599 } }}>
           {(matches) =>
             matches.small ? (
-              <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
+              <>
+                <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
+                <div className="w-full bg-[#ccd4e8] h-[3rem] absolute bottom-10 top-shadow">
+                  <SearchBar activeTab={activeTab} />
+                </div>
+              </>
             ) : null
           }
         </Media>

@@ -10,7 +10,7 @@ export default function SearchBar({ activeTab }: Props) {
         htmlFor="url"
       >
         <input
-          className="w-4/6 rounded text-sm h-6 pl-2"
+          className="sm:w-4/6 w-5/6 rounded text-base sm:text-sm h-8 sm:h-6 pl-2"
           placeholder="Search or enter address"
           type="text"
           name="url"
