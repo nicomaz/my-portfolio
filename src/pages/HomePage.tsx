@@ -32,7 +32,7 @@ export default function HomePage({ fade }: Props) {
         <Header fade={fade} />
 
         {notepadOpen ? (
-          <div className="absolute flex justify-center items-center h-[calc(100%-35vw)] sm:h-5/6">
+          <div className="absolute flex justify-center items-center h-[calc(100%-35vw)] sm:h-[calc(100%-79px-2.5rem)]">
             <Notes
               setNotepadOpen={setNotepadOpen}
               notepadOpen={notepadOpen}
@@ -42,7 +42,7 @@ export default function HomePage({ fade }: Props) {
           </div>
         ) : null}
 
-        <div className="flex justify-center sm:items-center h-full sm:h-5/6">
+        <div className="flex justify-center sm:items-center sm:h-[calc(100%-79px-2.5rem)]">
           <Browser
             setBrowserOpen={setBrowserOpen}
             setBrowserMinimised={setBrowserMinimised}

@@ -30,21 +30,20 @@ export default function Notes({
               ? "hidden-anim xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : noteExpanded
               ? noteMinimised
-                ? "hidden-anim xl:w-full xl:w-full mx-0 h-full sm:h-full  backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                ? "hidden-anim xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
                 : "xl:w-full xl:w-full h-full sm:h-full backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
               : "xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6  backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
             : "hidden"
         }
       >
-        {" "}
         <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
         <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
           <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
           <Buttons
-            setNotepadOpen={setNotepadOpen}
-            setNoteExpanded={setNoteExpanded}
-            noteExpanded={noteExpanded}
-            setNoteMinimised={setNoteMinimised}
+            setWindowOpen={setNotepadOpen}
+            setWindowExpanded={setNoteExpanded}
+            windowExpanded={noteExpanded}
+            setWindowMinimised={setNoteMinimised}
           />
 
           <input
