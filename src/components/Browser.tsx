@@ -30,10 +30,10 @@ export default function Browser({
         className={
           browserOpen
             ? browserMinimised && !browserExpanded
-              ? "hidden-anim mx-2 h-5/6 w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] "
+              ? "hidden-anim mx-2 h-5/6 w-full xl:w-4/6 sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] "
               : browserExpanded
               ? browserMinimised
-                ? "hidden-anim w-full mx-0 h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center"
+                ? "hidden-anim w-full  mx-0 h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center"
                 : "mx-0 h-full w-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center"
               : " xl:w-4/6 mx-2 h-5/6 w-full sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] "
             : "hidden"
