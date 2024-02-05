@@ -29,7 +29,7 @@ export default function Browser() {
                     setActiveTab={setActiveTab}
                   />
                 </div>
-                <div className="bg-gradient-to-t bg-[#c5dcfc] w-full h-[2.5rem] z-30 relative top-shadow">
+                <div className="bg-blue-200 w-full h-[2.5rem] z-30 relative top-shadow">
                   <SearchBar activeTab={activeTab} />
                 </div>
               </>
