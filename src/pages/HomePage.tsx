@@ -11,6 +11,7 @@ interface Props {
 export default function HomePage({ fade }: Props) {
   const { theme } = useContext(ThemeContext);
   const [notepadOpen, setNotepadOpen] = useState<boolean>(false);
+  const [noteMinimised, setNoteMinimised] = useState<boolean>(false);
 
   return (
     <div
@@ -28,10 +29,20 @@ export default function HomePage({ fade }: Props) {
         <Header fade={fade} />
 
         <div className="flex justify-center items-center h-[calc(100%-35vw)] sm:h-5/6">
-          <Notes setNotepadOpen={setNotepadOpen} notepadOpen={notepadOpen}/>
+          <Notes
+            setNotepadOpen={setNotepadOpen}
+            notepadOpen={notepadOpen}
+            setNoteMinimised={setNoteMinimised}
+            noteMinimised={noteMinimised}
+          />
         </div>
 
-        <Navbar fade={fade} setNotepadOpen={setNotepadOpen} notepadOpen={notepadOpen}/>
+        <Navbar
+          fade={fade}
+          setNotepadOpen={setNotepadOpen}
+          notepadOpen={notepadOpen}
+          setNoteMinimised={setNoteMinimised}
+        />
       </div>
     </div>
   );

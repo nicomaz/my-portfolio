@@ -8,10 +8,16 @@ import calculator from "../assets/calculator.png";
 interface Props {
   fade: boolean;
   setNotepadOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setNoteMinimised: React.Dispatch<React.SetStateAction<boolean>>;
   notepadOpen: boolean;
 }
 
-export default function Navbar({ fade, setNotepadOpen, notepadOpen }: Props) {
+export default function Navbar({
+  fade,
+  setNotepadOpen,
+  notepadOpen,
+  setNoteMinimised,
+}: Props) {
   return (
     <div
       className={
@@ -32,6 +38,7 @@ export default function Navbar({ fade, setNotepadOpen, notepadOpen }: Props) {
           }
           onClick={() => {
             setNotepadOpen(true);
+            setNoteMinimised(false);
           }}
         >
           <NavbarIcons icon={notepad} name="Notes" alt="notepad" />
