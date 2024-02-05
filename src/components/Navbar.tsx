@@ -10,13 +10,19 @@ interface Props {
   setNotepadOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setNoteMinimised: React.Dispatch<React.SetStateAction<boolean>>;
   notepadOpen: boolean;
+  setBrowserOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setBrowserMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  browserOpen: boolean;
 }
 
 export default function Navbar({
   fade,
-  setNotepadOpen,
   notepadOpen,
   setNoteMinimised,
+  setNotepadOpen,
+  setBrowserOpen,
+  setBrowserMinimised,
+  browserOpen,
 }: Props) {
   return (
     <div
@@ -43,7 +49,17 @@ export default function Navbar({
         >
           <NavbarIcons icon={notepad} name="Notes" alt="notepad" />
         </li>
-        <li>
+        <li
+          className={
+            browserOpen
+              ? "after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white"
+              : ""
+          }
+          onClick={() => {
+            setBrowserOpen(true);
+            setBrowserMinimised(false);
+          }}
+        >
           <NavbarIcons icon={safari} name="Safari" alt="safari browser" />
         </li>
         <li>

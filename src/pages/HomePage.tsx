@@ -13,8 +13,8 @@ export default function HomePage({ fade }: Props) {
   const { theme } = useContext(ThemeContext);
   const [notepadOpen, setNotepadOpen] = useState<boolean>(false);
   const [noteMinimised, setNoteMinimised] = useState<boolean>(false);
-
-  console.log(noteMinimised);
+  const [browserOpen, setBrowserOpen] = useState<boolean>(false);
+  const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
 
   return (
     <div
@@ -43,13 +43,21 @@ export default function HomePage({ fade }: Props) {
         ) : null}
 
         <div className="flex justify-center sm:items-center h-full sm:h-5/6">
-          <Browser />
+          <Browser
+            setBrowserOpen={setBrowserOpen}
+            setBrowserMinimised={setBrowserMinimised}
+            browserMinimised={browserMinimised}
+            browserOpen={browserOpen}
+          />
         </div>
         <Navbar
           fade={fade}
           setNotepadOpen={setNotepadOpen}
           notepadOpen={notepadOpen}
           setNoteMinimised={setNoteMinimised}
+          setBrowserOpen={setBrowserOpen}
+          setBrowserMinimised={setBrowserMinimised}
+          browserOpen={browserOpen}
         />
       </div>
     </div>

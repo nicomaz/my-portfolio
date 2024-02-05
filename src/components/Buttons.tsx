@@ -1,33 +1,35 @@
 interface Props {
-  setNotepadOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-  setNoteExpanded?: React.Dispatch<React.SetStateAction<boolean>>;
-  setNoteMinimised?: React.Dispatch<React.SetStateAction<boolean>>;
-  noteExpanded?: boolean;
+  setWindowOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setWindowExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  setWindowMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  windowExpanded: boolean;
 }
 
 export default function Buttons({
-  setNotepadOpen,
-  setNoteExpanded,
-  noteExpanded,
-  setNoteMinimised,
+  setWindowOpen,
+  setWindowExpanded,
+  windowExpanded,
+  setWindowMinimised,
 }: Props) {
   return (
     <div className="gap-2 flex p-3 col-span-3">
       <button
         className="bg-red-500 rounded-2xl size-4 border-[0.5px] border-gray-400"
         onClick={() => {
-          setNotepadOpen(false);
+          setWindowOpen(false);
         }}
       />
       <button
         className="bg-yellow-400 rounded-2xl size-4 border-[0.5px] border-gray-400"
         onClick={() => {
-          setNoteMinimised(true);
+          setWindowMinimised(true);
         }}
       />
       <button
         className="bg-green-500 rounded-2xl size-4 border-[0.5px] border-gray-400"
-        onClick={() => setNoteExpanded(!noteExpanded)}
+        onClick={() => {
+          setWindowExpanded(!windowExpanded);
+        }}
       />
     </div>
   );
