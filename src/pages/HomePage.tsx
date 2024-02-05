@@ -42,7 +42,7 @@ export default function HomePage({ fade }: Props) {
           </div>
         ) : null}
 
-        <div className="flex justify-center items-center h-[calc(100%-35vw)] sm:h-5/6">
+        <div className="flex justify-center sm:items-center h-full sm:h-5/6">
           <Browser />
         </div>
         <Navbar
