@@ -23,6 +23,7 @@ export default function Browser() {
             ) : (
               <>
                 <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg relative">
+                  <span className="handle w-[calc(100%-5rem)] col-span-3 h-10 ml-20 absolute handle" />
                   <Buttons />
                   <BrowserTabs
                     activeTab={activeTab}
