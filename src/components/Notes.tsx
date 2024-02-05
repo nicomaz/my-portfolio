@@ -27,17 +27,17 @@ export default function Notes({
         className={
           notepadOpen
             ? noteMinimised && !noteExpanded
-              ? "hidden-anim xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+              ? "hidden-anim xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : noteExpanded
               ? noteMinimised
-                ? "hidden-anim xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                : "xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-              : "xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                ? "hidden-anim xl:w-full xl:w-full mx-0 h-full sm:h-full  backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                : "xl:w-full xl:w-full h-full sm:h-full backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
+              : "xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6  backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
             : "hidden"
         }
       >
         <span className="handle w-[calc(100%-6rem)] absolute h-10 ml-20" />
-        <div className="col-span-1 dark:bg-slate-600/[0.9] bg-gray-200/[0.8] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
+        <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
           <Buttons
             setNotepadOpen={setNotepadOpen}
             setNoteExpanded={setNoteExpanded}
@@ -46,7 +46,7 @@ export default function Notes({
           />
 
           <input
-            className="w-[95%] h-8 bg-white rounded-lg block m-auto border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400"
+            className="w-[95%] h-8 bg-white rounded-lg block m-auto border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm"
             placeholder="Search"
           />
           <ul>
@@ -71,4 +71,3 @@ export default function Notes({
   );
 }
 
-// noteOpen ? noteExpanded ? noteMinimised ? "note minimised" : "note expanded": "noteOpen" : "noteClosed"
