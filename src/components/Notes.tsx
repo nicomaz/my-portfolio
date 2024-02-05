@@ -20,7 +20,7 @@ export default function Notes({ setNotepadOpen, notepadOpen }: Props) {
         className={
           notepadOpen
             ? noteExpanded
-              ? `xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400`
+              ? `xl:w-full xl:w-full mx-0 h-full sm:h-full backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center`
               : `xl:w-4/6 xl:h-4/6 mx-2 h-[calc(100%-2rem)] sm:h-4/6 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400`
             : "hidden"
         }
