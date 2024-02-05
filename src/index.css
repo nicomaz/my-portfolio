@@ -270,3 +270,21 @@ li:last-child a.not-active::after {
 li.not-active:last-child::after {
   background-color: #ccd4e8;
 }
+
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgb(189, 189, 191);
+}
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgb(189, 189, 191);
+  font-size: small;
+}
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgb(189, 189, 191);
+}
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgb(189, 189, 191);
+}

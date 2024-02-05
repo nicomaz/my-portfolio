@@ -5,6 +5,7 @@ import BrowserTabs from "./BrowserTabs";
 import Media from "react-media";
 import BrowserMenu from "./BrowserMenu";
 import TabsContainer from "./TabsContainer";
+import SearchBar from "./SearchBar";
 
 export default function Browser() {
   const [activeTab, setActiveTab] = useState<string>("About Me");
@@ -28,7 +29,9 @@ export default function Browser() {
                     setActiveTab={setActiveTab}
                   />
                 </div>
-                <div className="bg-gradient-to-t bg-[#c5dcfc] w-full h-[2.5rem] z-30 relative top-shadow" />
+                <div className="bg-gradient-to-t bg-[#c5dcfc] w-full h-[2.5rem] z-30 relative top-shadow">
+                  <SearchBar activeTab={activeTab} />
+                </div>
               </>
             )
           }
@@ -36,9 +39,12 @@ export default function Browser() {
 
         <Media queries={{ small: { maxWidth: 599 } }}>
           {(matches) =>
-            matches.small ? <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs}/> : null
+            matches.small ? (
+              <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
+            ) : null
           }
         </Media>
+
         {showTabs ? <TabsContainer /> : null}
       </div>
     </Draggable>
