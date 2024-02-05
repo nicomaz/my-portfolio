@@ -36,8 +36,10 @@ export default function Notes({
             : "hidden"
         }
       >
-        <span className="handle w-[calc(100%-6rem)] absolute h-10 ml-20" />
+        {" "}
+        <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
         <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
+          <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
           <Buttons
             setNotepadOpen={setNotepadOpen}
             setNoteExpanded={setNoteExpanded}
@@ -70,4 +72,3 @@ export default function Notes({
     </Draggable>
   );
 }
-
