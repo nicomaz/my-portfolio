@@ -22,11 +22,9 @@ export default function Tab({ tabName, setActiveTab, activeTab }: Props) {
         }}
       >
         <a
-          className={
-            activeTab === tabName
-              ? "before:size-[1rem] before:bg-[#d9e0f0] before:bottom-0 before:absolute before:-left-4 before:rounded-3xl after:size-[0.5rem] after:bg-[#c5dcfc] after:bottom-0 after:absolute after:-right-2 active"
-              : "before:size-[1rem] before:bg-[#d9dfee] before:bottom-0 before:absolute before:-left-4 before:rounded-3xl after:size-[0.5rem] after:bottom-0 after:absolute after:-right-2 after:bg-[#d9dfee] not-active"
-          }
+          className={`${
+            activeTab === tabName ? "active" : "not-active"
+          } before:size-[1rem] before:bg-[#d9e0f0] before:bottom-0 before:absolute before:-left-4 before:rounded-3xl after:size-[0.5rem] after:bg-[#c5dcfc] after:bottom-0 after:absolute after:-right-2`}
         >
           <h3 className="ml-4 text-sm mt-[0.3rem] relative ">{tabName}</h3>
         </a>

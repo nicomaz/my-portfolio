@@ -8,8 +8,8 @@ interface Props {
 
 export default function BrowserTabs({ activeTab, setActiveTab }: Props) {
   return (
-    <ul className="relative flex flex-row">
-      <nav className="ml-3 relative flex flex-row">
+    <ul className="flex flex-row">
+      <nav className="ml-3 flex flex-row">
         <Tab
           tabName="About Me"
           setActiveTab={setActiveTab}

@@ -26,11 +26,7 @@ export default function Navbar({
 }: Props) {
   return (
     <div
-      className={
-        fade
-          ? " up absolute bottom-0 sm:bottom-2 w-full flex justify-center"
-          : "absolute bottom-0 sm:bottom-2 w-full flex justify-center "
-      }
+      className={`${fade ? "up" : ""} absolute bottom-0 sm:bottom-2 w-full flex justify-center`}
     >
       <ul className="w-full lg:w-5/12 h-[4.9rem] dark:bg-slate-800/[0.6] bg-blue-200/[0.7] backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly items-center">
         <li className="after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white">

@@ -37,9 +37,9 @@ export default function Notes({
             : "hidden"
         }
       >
-        <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
+        <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute" />
         <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
-          <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute " />
+          <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute" />
           <Buttons
             setWindowOpen={setNotepadOpen}
             setWindowExpanded={setNoteExpanded}
@@ -48,7 +48,7 @@ export default function Notes({
           />
 
           <input
-            className="w-[95%] h-8 bg-white rounded-lg block m-auto border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm"
+            className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm"
             placeholder="Search"
           />
           <ul>
@@ -65,7 +65,7 @@ export default function Notes({
             })}
           </ul>
         </div>
-        <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg grain">
+        <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg">
           <IndivNoteBody noteClicked={noteClicked} />
         </div>
       </div>
