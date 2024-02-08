@@ -42,7 +42,7 @@ export default function Browser({
         <Media queries={{ small: { maxWidth: 599 } }}>
           {(matches) =>
             matches.small ? (
-              <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
+              <div className="flex flex-row bg-[#ccd4e8]  w-full h-[2.5rem] rounded-t-lg">
                 <Buttons
                   setWindowOpen={setBrowserOpen}
                   setWindowMinimised={setBrowserMinimised}
@@ -52,7 +52,7 @@ export default function Browser({
               </div>
             ) : (
               <>
-                <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
+                <div className="flex flex-row bg-[#ccd4e8] dark:bg-slate-900 w-full h-[2.5rem] rounded-t-lg">
                   <span className="handle w-[calc(100%-5rem)] col-span-3 h-10 ml-20 absolute" />
                   <Buttons
                     setWindowOpen={setBrowserOpen}
@@ -65,7 +65,7 @@ export default function Browser({
                     setActiveTab={setActiveTab}
                   />
                 </div>
-                <div className="bg-blue-200 w-full h-[2.5rem] z-30 relative top-shadow">
+                <div className="bg-blue-200 dark:bg-blue-900 w-full h-[2.5rem] z-30 relative top-shadow">
                   <SearchBar activeTab={activeTab} />
                 </div>
               </>
@@ -78,7 +78,7 @@ export default function Browser({
             matches.small ? (
               <>
                 <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
-                <div className="w-full bg-[#ccd4e8] h-[3rem] absolute bottom-10 top-shadow">
+                <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
                   <SearchBar activeTab={activeTab} />
                 </div>
               </>

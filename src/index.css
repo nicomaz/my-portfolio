@@ -239,36 +239,94 @@ li.active {
   box-shadow: 0px -1px 0px 0.2px rgba(0, 0, 0, 0.1);
 }
 
+/* square to left of first child*/
 li.active:first-child::before {
   background-color: #c8defc;
 }
 
-/* circle on the left of the first child */
-li.active:first-child a::before {
-  background-color: #ccd4e8;
+/* circle left of first child, right of last child */
+li.dark:last-child::after,
+li.dark.active:first-child a::before {
+  background-color: #0f172a;
+}
+
+/* square on the left of first child */
+li.dark.active:first-child::before {
+  background-color: #1e3a8a;
+}
+
+li.dark.not-active:first-child::before {
+  background-color: #475569;
 }
 
 /* circle on the right of last child */
-li:last-child::after {
+li.dark.not-active:last-child::after {
+  background-color: #0f172a;
+}
+li.not-active:last-child::after {
   background-color: #ccd4e8;
 }
 
-li.not-active:last-child::after {
-  background-color: #ccd4e8;
+/* circle on left of first child*/
+li.dark:first-child a:first-child.not-active::before {
+  background-color: #0f172a;
 }
 
 li:first-child a:first-child.not-active::before {
   background-color: #ccd4e8;
 }
 
-/* square to the left of inactive last child */
+/* square to the left of last child */
 li:last-child a.not-active::after {
   background-color: #d9dfee;
 }
 
-/* circle left of last child */
+/* circle to the left of last child */
+li.dark:last-child a::before {
+  background-color: #475569;
+}
+
+/* square to the right of last child */
+li.dark:last-child a.not-active::after {
+  background-color: #475569;
+}
+
+li.dark:last-child a.active::after {
+  background-color: #1e3a8a;
+}
+
+/* square to left of first child */
+li.dark:first-child a.active::after {
+  background-color: #1e3a8a;
+}
+
+/* circle right of last child */
 li.not-active:last-child::after {
   background-color: #ccd4e8;
+}
+
+/* circle to right of skills */
+li.dark::after {
+  background-color: #475569;
+}
+
+/* square to left of skills */
+li.dark::before {
+  background-color: #475569;
+}
+
+/* square to right of skills */
+li.dark a.not-active::after {
+  background-color: #475569;
+}
+
+li.dark a.active::after {
+  background-color: #1e3a8a;
+}
+
+/* circle to left of skills */
+li.dark a::before {
+  background-color: #475569;
 }
 
 input::-webkit-input-placeholder {
