@@ -239,18 +239,11 @@ li.active {
   box-shadow: 0px -1px 0px 0.2px rgba(0, 0, 0, 0.1);
 }
 
-/* square to left of first child*/
+/* square to left of first child */
 li.active:first-child::before {
   background-color: #c8defc;
 }
 
-/* circle left of first child, right of last child */
-li.dark:last-child::after,
-li.dark.active:first-child a::before {
-  background-color: #0f172a;
-}
-
-/* square on the left of first child */
 li.dark.active:first-child::before {
   background-color: #1e3a8a;
 }
@@ -259,21 +252,45 @@ li.dark.not-active:first-child::before {
   background-color: #475569;
 }
 
-/* circle on the right of last child */
-li.dark.not-active:last-child::after {
+/* circle left of first child, right of last child */
+li.dark:last-child::after,
+li.dark.active:first-child a::before {
   background-color: #0f172a;
 }
-li.not-active:last-child::after {
+
+li.active:first-child a::before {
   background-color: #ccd4e8;
 }
 
-/* circle on left of first child*/
+/* circle left of first child */
 li.dark:first-child a:first-child.not-active::before {
   background-color: #0f172a;
 }
 
 li:first-child a:first-child.not-active::before {
   background-color: #ccd4e8;
+}
+
+/* circle right of last child */
+li.dark.not-active:last-child::after {
+  background-color: #0f172a;
+}
+
+li.dark.active:last-child::after {
+  background-color: #0f172a;
+}
+
+li.not-active:last-child::after {
+  background-color: #ccd4e8;
+}
+
+li.active:last-child::after {
+  background-color: #ccd4e8;
+}
+
+/* circle right of first child */
+li:first-child::after {
+  background-color: #e2e8f0;
 }
 
 /* square to the left of last child */
@@ -284,6 +301,10 @@ li:last-child a.not-active::after {
 /* circle to the left of last child */
 li.dark:last-child a::before {
   background-color: #475569;
+}
+
+li:last-child a::before {
+  background-color: #e2e8f0;
 }
 
 /* square to the right of last child */
@@ -300,14 +321,20 @@ li.dark:first-child a.active::after {
   background-color: #1e3a8a;
 }
 
-/* circle right of last child */
-li.not-active:last-child::after {
-  background-color: #ccd4e8;
-}
+
 
 /* circle to right of skills */
 li.dark::after {
   background-color: #475569;
+}
+
+/* circle to right of skills */
+li::after {
+  background-color: #e2e8f0;
+}
+
+li.active::after {
+  background-color: #e2e8f0;
 }
 
 /* square to left of skills */
@@ -324,7 +351,15 @@ li.dark a.active::after {
   background-color: #1e3a8a;
 }
 
+li a.not-active::after {
+  background-color: #e2e8f0;
+}
+
 /* circle to left of skills */
+li a.active::before {
+  background-color: #e2e8f0;
+}
+
 li.dark a::before {
   background-color: #475569;
 }
