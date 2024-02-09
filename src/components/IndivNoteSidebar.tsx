@@ -5,8 +5,7 @@ interface Props {
     title: string;
     date: string;
     shortDate: string;
-    body: string;
-    active: boolean;
+    body: string[];
     id: number;
   };
   setNoteClicked: React.Dispatch<React.SetStateAction<number>>;

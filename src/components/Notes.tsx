@@ -23,7 +23,7 @@ export default function Notes({
 
   return (
     <Draggable handle=".handle">
-      <div className="flex justify-center sm:items-center absolute">
+      <div className="flex justify-center sm:items-center absolute w-content h-content">
         <div
           className={
             notepadOpen
@@ -33,7 +33,7 @@ export default function Notes({
                 ? noteMinimised
                   ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
                   : "mx-0 h-[calc(100vh-111px)] w-full sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                : "xl:w-4/6 xl:h-4/6 sm:h-4/6 h-[calc(100%-79px-2rem)] w-full backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[80rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }
         >
@@ -48,7 +48,7 @@ export default function Notes({
             />
 
             <input
-              className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm"
+              className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm mx-auto"
               placeholder="Search"
             />
             <ul>
