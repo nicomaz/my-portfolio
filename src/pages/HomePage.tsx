@@ -28,28 +28,23 @@ export default function HomePage({ fade }: Props) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="w-screen h-screen ">
+      <div className="w-screen h-screen">
         <Header fade={fade} />
 
-        {notepadOpen ? (
-          <div className="flex justify-center sm:items-center h-screen sm:h-[calc(100%-79px-2.5rem)]">
-            <Notes
-              setNotepadOpen={setNotepadOpen}
-              notepadOpen={notepadOpen}
-              setNoteMinimised={setNoteMinimised}
-              noteMinimised={noteMinimised}
-            />
-          </div>
-        ) : null}
+        <Notes
+          setNotepadOpen={setNotepadOpen}
+          notepadOpen={notepadOpen}
+          setNoteMinimised={setNoteMinimised}
+          noteMinimised={noteMinimised}
+        />
 
-        <div className="flex justify-center sm:items-center sm:h-[calc(100%-79px-2.5rem)]">
-          <Browser
-            setBrowserOpen={setBrowserOpen}
-            setBrowserMinimised={setBrowserMinimised}
-            browserMinimised={browserMinimised}
-            browserOpen={browserOpen}
-          />
-        </div>
+        <Browser
+          setBrowserOpen={setBrowserOpen}
+          setBrowserMinimised={setBrowserMinimised}
+          browserMinimised={browserMinimised}
+          browserOpen={browserOpen}
+        />
+
         <Navbar
           fade={fade}
           setNotepadOpen={setNotepadOpen}
