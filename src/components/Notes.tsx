@@ -48,7 +48,7 @@ export default function Notes({
             />
 
             <input
-              className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm"
+              className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm mx-auto"
               placeholder="Search"
             />
             <ul>
