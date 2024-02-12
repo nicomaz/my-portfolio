@@ -80,7 +80,7 @@ export default function Browser({
                   <div className="bg-blue-200 dark:bg-blue-900 w-full h-[2.5rem] z-30 relative top-shadow">
                     <SearchBar activeTab={activeTab} section={section}/>
                   </div>
-                  {activeTab === "About Me" && <AboutMe setSection={setSection}  section={section}/>}
+                  {activeTab === "About Me" && <AboutMe setSection={setSection}  section={section} browserExpanded={browserExpanded}/>}
                 </>
               )
             }

@@ -9,11 +9,20 @@ import WikiSeeAlso from "./WikiSeeAlso";
 interface Props {
   setSection: React.Dispatch<React.SetStateAction<string>>;
   section: string;
+  browserExpanded: boolean;
 }
 
-export default function AboutMe({ setSection, section }: Props) {
+export default function AboutMe({
+  setSection,
+  section,
+  browserExpanded,
+}: Props) {
   return (
-    <div className="w-full h-[30rem] bg-white rounded-b-xl pt-1 px-14 overflow-scroll">
+    <div
+      className={` ${
+        browserExpanded ? "h-full" : "h-[30rem]"
+      } w-full bg-white rounded-b-xl pt-1 px-14 overflow-scroll`}
+    >
       <div className="grid grid-cols-[max-content_1fr]">
         <span className="flex flex-row" id=" ">
           <img src={wikipediaLogo} alt="wikipedia logo" className="size-14" />
