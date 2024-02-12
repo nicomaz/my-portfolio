@@ -1,10 +1,9 @@
 import wikipediaLogo from "../assets/wikipedia.png";
 import wikipediaName from "../assets/wikipedia-logo.png";
 import wikipediaSub from "../assets/wikipedia-sub.png";
-import personalPhoto from "../assets/personal.jpeg";
-import CV from "../assets/Nicola_Mazuryk_CV.pdf";
 import WikiContents from "./WikiContents";
 import WikiList from "./WikiList";
+import WikiSidebar from "./WikiSidebar";
 
 interface Props {
   setSection: React.Dispatch<React.SetStateAction<string>>;
@@ -187,8 +186,7 @@ export default function AboutMe({ setSection, section }: Props) {
                 </li>
               </ul>
             </main>
-
-           
+            <WikiSidebar />
           </div>
         </div>
       </div>
