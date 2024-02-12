@@ -1,4 +1,4 @@
-import { NoteInfo } from "../utils/noteInfo";
+import { NoteInfo } from "../utils/data";
 
 interface Props {
   noteClicked: number;
