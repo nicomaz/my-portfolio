@@ -4,8 +4,21 @@ import wikipediaSub from "../assets/wikipedia-sub.png";
 import { skills } from "../utils/data";
 import { useState } from "react";
 
-export default function AboutMe() {
+interface Props {
+  setSection: React.Dispatch<React.SetStateAction<string>>;
+  section: string;
+}
+
+export default function AboutMe({ setSection }: Props) {
   const [skillsOpened, setSkillsOpened] = useState(false);
+
+  const scrollToComponent = (componentId: string) => {
+    const element = document.getElementById(componentId);
+    setSection(componentId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="w-full h-[30rem] bg-white rounded-b-xl pt-1 px-14 overflow-scroll">
@@ -60,12 +73,26 @@ export default function AboutMe() {
               </li>
               {skillsOpened ? (
                 <ul className="pl-2">
-                  <li>Programming Languages</li>
+                  <li
+                    onClick={() => scrollToComponent("#Programming_Language")}
+                  >
+                    Programming Languages
+                  </li>
 
-                  <li>Front-end development</li>
-                  <li>Back-end development</li>
-                  <li>Database and DevOps</li>
-                  <li>Currently Learning</li>
+                  <li
+                    onClick={() => scrollToComponent("#Frontend_Development")}
+                  >
+                    Front-end development
+                  </li>
+                  <li onClick={() => scrollToComponent("#Backend_Development")}>
+                    Back-end development
+                  </li>
+                  <li onClick={() => scrollToComponent("#Database_and_DevOps")}>
+                    Database and DevOps
+                  </li>
+                  <li onClick={() => scrollToComponent("#Currently_Learning")}>
+                    Currently Learning
+                  </li>
                 </ul>
               ) : null}
             </ul>
@@ -112,7 +139,10 @@ export default function AboutMe() {
               <h4 className="text-xl font-medium font-serif mt-4">Skills</h4>
               <hr className="w-content" />
 
-              <h5 className="text-[0.95rem] font-semibold mt-1 pt-2">
+              <h5
+                className="text-[0.95rem] font-semibold mt-1 pt-2"
+                id="#Programming_Language"
+              >
                 Programming languages
               </h5>
 
@@ -123,7 +153,10 @@ export default function AboutMe() {
                 )}
               </ul>
 
-              <h5 className="text-[0.95rem] font-semibold mt-3">
+              <h5
+                className="text-[0.95rem] font-semibold mt-3"
+                id="#Frontend_Development"
+              >
                 Front-end development
               </h5>
               <ul className="grid grid-cols-3 list-disc ml-3">
@@ -131,7 +164,10 @@ export default function AboutMe() {
                   (skill) => skill.concern === "FE" && <li>{skill.name}</li>
                 )}
               </ul>
-              <h5 className="text-[0.95rem] font-semibold mt-3">
+              <h5
+                className="text-[0.95rem] font-semibold mt-3"
+                id="#Backend_Development"
+              >
                 Back-end development
               </h5>
 
@@ -140,7 +176,10 @@ export default function AboutMe() {
                   (skill) => skill.concern === "BE" && <li>{skill.name}</li>
                 )}
               </ul>
-              <h5 className="text-[0.95rem] font-semibold mt-3">
+              <h5
+                className="text-[0.95rem] font-semibold mt-3"
+                id="#Database_and_DevOps"
+              >
                 Databases and DevOps
               </h5>
               <ul className="grid grid-cols-3 list-disc ml-3">
@@ -149,7 +188,10 @@ export default function AboutMe() {
                 )}
               </ul>
 
-              <h5 className="text-[0.95rem] font-semibold mt-3">
+              <h5
+                className="text-[0.95rem] font-semibold mt-3"
+                id="#Currently_Learning"
+              >
                 Currently learning
               </h5>
 
@@ -167,6 +209,7 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
+      <div className="w-full h-[30rem]"></div>
     </div>
   );
 }

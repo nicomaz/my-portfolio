@@ -24,6 +24,7 @@ export default function Browser({
   const [activeTab, setActiveTab] = useState<string>("About Me");
   const [showTabs, setShowTabs] = useState<boolean>(false);
   const [browserExpanded, setBrowserExpanded] = useState<boolean>(false);
+  const [section, setSection] = useState<string>("");
 
   return (
     <Draggable handle=".handle">
@@ -57,7 +58,7 @@ export default function Browser({
                   />
                   <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
                   <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
-                    <SearchBar activeTab={activeTab} />
+                    <SearchBar activeTab={activeTab} section={section} />
                   </div>
                 </div>
               ) : (
@@ -77,9 +78,9 @@ export default function Browser({
                   </div>
 
                   <div className="bg-blue-200 dark:bg-blue-900 w-full h-[2.5rem] z-30 relative top-shadow">
-                    <SearchBar activeTab={activeTab} />
+                    <SearchBar activeTab={activeTab} section={section}/>
                   </div>
-                  {activeTab === "About Me" && <AboutMe />}
+                  {activeTab === "About Me" && <AboutMe setSection={setSection}  section={section}/>}
                 </>
               )
             }
