@@ -227,7 +227,7 @@ li::after {
   box-shadow: inset 0.4px -0.5px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-nav li {
+nav li.notes {
   box-shadow: 0px -0.4px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -320,8 +320,6 @@ li.dark:last-child a.active::after {
 li.dark:first-child a.active::after {
   background-color: #1e3a8a;
 }
-
-
 
 /* circle to right of skills */
 li.dark::after {

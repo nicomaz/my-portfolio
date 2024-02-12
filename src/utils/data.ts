@@ -7,6 +7,11 @@ type NoteInfo = {
   id: number;
 };
 
+type Skills = {
+  name: string;
+  concern: string;
+};
+
 export const NoteInfo: NoteInfo[] = [
   {
     title: "Hello 👋",
@@ -40,4 +45,24 @@ export const NoteInfo: NoteInfo[] = [
     body: ["Broccoli", "Basmati rice", "Milk", "Chocolates!!!"],
     id: 3,
   },
+];
+
+export const skills: Skills[] = [
+  { name: "React", concern: "FE" },
+  { name: "React Native", concern: "FE" },
+  { name: "JavaScript", concern: "Language" },
+  { name: "Axios", concern: "BE" },
+  { name: "Express.JS", concern: "BE" },
+  { name: "PSQL", concern: "DevOps" },
+  { name: "TailWindCSS", concern: "FE" },
+  { name: "HTML & CSS", concern: "FE" },
+  { name: "TypeScript", concern: "Language" },
+  { name: "Node.JS", concern: "BE" },
+  { name: "Firebase", concern: "DevOps" },
+  { name: "Figma", concern: "FE" },
+  { name: "Agile methodologies", concern: "DevOps" },
+  { name: "Kanban", concern: "DevOps" },
+  { name: "Jest", concern: "BE" },
+  { name: "Python", concern: "Learning" },
+  { name: "Redux", concern: "Learning" },
 ];

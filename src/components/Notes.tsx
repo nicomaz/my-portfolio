@@ -1,5 +1,5 @@
 import Buttons from "./Buttons";
-import { NoteInfo } from "../utils/noteInfo";
+import { NoteInfo } from "../utils/data";
 import IndivNote from "./IndivNoteSidebar";
 import { useState } from "react";
 import IndivNoteBody from "./IndivNoteBody";
@@ -54,7 +54,7 @@ export default function Notes({
             <ul>
               {NoteInfo.map((note) => {
                 return (
-                  <li key={note.id}>
+                  <li key={note.id} className="notes">
                     <IndivNote
                       note={note}
                       setNoteClicked={setNoteClicked}
