@@ -1,8 +1,9 @@
 interface Props {
   activeTab: string;
+  section: string;
 }
 
-export default function SearchBar({ activeTab }: Props) {
+export default function SearchBar({ activeTab, section }: Props) {
   return (
     <div className="flex flex-row justify-center">
       <label
@@ -14,6 +15,11 @@ export default function SearchBar({ activeTab }: Props) {
           placeholder="Search or enter address"
           type="text"
           name="url"
+          value={
+            activeTab === "About Me"
+              ? `https://en.wikipedia.org/wiki/Nicola_Mazuryk${section}`
+              : "https://en.wikipedia.org/wiki/Skills"
+          }
           defaultValue={
             activeTab === "About Me"
               ? "https://en.wikipedia.org/wiki/Nicola_Mazuryk"
