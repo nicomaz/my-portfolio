@@ -6,7 +6,7 @@ export default function WikiSidebar() {
     <div className="bg-gray-200 w-56 h-[45rem] border-[0.5px] border-gray-800 dark:bg-slate-800 text-center p-1 flex flex-col items-center">
       <h3 className="font-semibold">Nicola Mazuryk</h3>
       <img src={personalPhoto} alt="girl smiling" className="px-4 py-1" />
-      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center my-0.5">
+      <h5 className="text-xs leading-tight font-bold w-[95%] dark:bg-indigo-900  h-content bg-indigo-200 justify-center my-0.5">
         Trainee Software Developer
       </h5>
       <h6 className="text-xs font-bold tracking-tight mt-0.5">Northcoders</h6>
@@ -43,13 +43,13 @@ export default function WikiSidebar() {
       </h5>
       <div className="grid grid-cols-2 text-xs text-left w-full ml-3 my-0.5">
         <span className="font-bold">LinkedIn</span>
-        <span className="text-blue-800 font-medium">
+        <span className="text-blue-800 font-medium dark:text-blue-600">
           <a href="https://www.linkedin.com/in/nicolamazuryk/" target="_blank">
             /NicolaMazuryk
           </a>
         </span>
         <span className="font-bold">Github</span>
-        <span className="text-blue-800 font-medium">
+        <span className="text-blue-800 font-medium dark:text-blue-600">
           <a href="https://github.com/nicomaz" target="_blank">
             /nicomaz
           </a>
@@ -58,7 +58,7 @@ export default function WikiSidebar() {
       <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 dark:bg-indigo-900 justify-center my-0.5">
         Download my resume
       </h5>
-      <span className="text-xs text-blue-800 font-medium my-0.5">
+      <span className="text-xs text-blue-800 dark:text-blue-600 font-medium my-0.5">
         <a href={CV} download="Nicola_Mazuryk_CV.pdf">
           Click to download my Resume
         </a>
