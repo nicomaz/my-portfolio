@@ -3,7 +3,7 @@ import CV from "../assets/Nicola_Mazuryk_CV.pdf";
 
 export default function WikiSidebar() {
   return (
-    <div className="bg-gray-200 w-56 h-[45rem] border-[0.5px] border-gray-800 text-center p-1 flex flex-col items-center">
+    <div className="bg-gray-200 w-56 h-[45rem] border-[0.5px] border-gray-800 dark:bg-slate-800 text-center p-1 flex flex-col items-center">
       <h3 className="font-semibold">Nicola Mazuryk</h3>
       <img src={personalPhoto} alt="girl smiling" className="px-4 py-1" />
       <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center my-0.5">
@@ -15,7 +15,7 @@ export default function WikiSidebar() {
         Acquired transferable programming skills in a comprehensive,
         industry-led 13-week Software Development Bootcamp.
       </span>
-      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center mb-0.5 mt-2">
+      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 dark:bg-indigo-900 justify-center mb-0.5 mt-2">
         BA Modern History and Politics
       </h5>
       <h6 className="text-xs font-bold tracking-tight mt-0.5">
@@ -26,7 +26,7 @@ export default function WikiSidebar() {
         Researched, collected and analysed data to argue for improvements,
         changes and explanations of complex systems.
       </span>
-      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center my-0.5">
+      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 dark:bg-indigo-900 justify-center my-0.5">
         Personal Details
       </h5>
       <div className="grid grid-cols-2 text-xs text-left w-full ml-3 mt-0.5">
@@ -38,7 +38,7 @@ export default function WikiSidebar() {
           open-source software
         </p>
       </div>
-      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center my-0.5">
+      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 dark:bg-indigo-900 justify-center my-0.5">
         Contact Details
       </h5>
       <div className="grid grid-cols-2 text-xs text-left w-full ml-3 my-0.5">
@@ -55,7 +55,7 @@ export default function WikiSidebar() {
           </a>
         </span>
       </div>
-      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 justify-center my-0.5">
+      <h5 className="text-xs leading-tight font-bold w-[95%] h-content bg-indigo-200 dark:bg-indigo-900 justify-center my-0.5">
         Download my resume
       </h5>
       <span className="text-xs text-blue-800 font-medium my-0.5">

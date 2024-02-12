@@ -21,12 +21,12 @@ export default function AboutMe({
     <div
       className={` ${
         browserExpanded ? "h-full" : "h-[30rem]"
-      } w-full bg-white rounded-b-xl pt-1 px-14 overflow-scroll`}
+      } w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 px-14 overflow-scroll`}
     >
       <div className="grid grid-cols-[max-content_1fr]">
         <span className="flex flex-row" id=" ">
           <img src={wikipediaLogo} alt="wikipedia logo" className="size-14" />
-          <span className="flex flex-col ml-1">
+          <span className="flex flex-col ml-1 dark:invert ">
             <img
               src={wikipediaName}
               alt="text saying wikipedia"
