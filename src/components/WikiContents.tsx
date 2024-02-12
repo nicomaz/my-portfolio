@@ -19,11 +19,13 @@ export default function WikiContents({ setSection, section }: Props) {
 
   return (
     <div>
-      <h3 className="font-bold text-sm pt-9 pl-4 tracking-tight">Contents</h3>
+      <h3 className="font-bold text-sm pt-9 pl-4 tracking-tight mb-1">
+        Contents
+      </h3>
       <hr className="w-content ml-4" />
       <ul className="text-sm pl-3 tracking-tight">
         <li
-          className="ml-1"
+          className="ml-1 mt-1"
           onClick={() => {
             scrollToComponent(" ");
           }}
