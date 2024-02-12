@@ -4,6 +4,7 @@ import wikipediaSub from "../assets/wikipedia-sub.png";
 import WikiContents from "./WikiContents";
 import WikiList from "./WikiList";
 import WikiSidebar from "./WikiSidebar";
+import WikiSeeAlso from "./WikiSeeAlso";
 
 interface Props {
   setSection: React.Dispatch<React.SetStateAction<string>>;
@@ -129,61 +130,31 @@ export default function AboutMe({ setSection, section }: Props) {
                 Some projects, blogs and the like that I'm interested in
               </span>
               <ul className="list-disc ml-3 mt-3">
-                <li className="mb-2" id="#HackerTab">
-                  <a
-                    href="https://hackertab.dev/"
-                    target="_blank"
-                    className="text-blue-600 font-semibold"
-                  >
-                    HackerTab
-                  </a>
-                  <p>
-                    Free and open-source homepage extension that I like to use
-                    to explore articles, github repos and conversations
-                    surrounding JavaScript, TypeScript, AI and Machine Learning.
-                  </p>
-                </li>
-                <li className="mb-2" id="#Ollama">
-                  <a
-                    href="https://github.com/ollama/ollama"
-                    target="_blank"
-                    className="text-blue-600 font-semibold"
-                  >
-                    Ollama
-                  </a>
-                  <p>
-                    A really cool tool that allows you to run open-source LLMS
-                    locally.
-                  </p>
-                </li>
-                <li className="mb-2" id="#Julia_Evans_Blog">
-                  <a
-                    href="https://jvns.ca/"
-                    target="_blank"
-                    className="text-blue-600 font-semibold"
-                  >
-                    Julia Evans' blog
-                  </a>
-                  <p>
-                    No one can explain programming concepts like Julia Evans
-                    can! My favourite blog, especially when it comes to 'How
-                    computer thing work'
-                  </p>
-                </li>
-                <li className="mb-2" id="#Astra_Laboratories">
-                  <a
-                    href="https://www.withastra.org/"
-                    target="_blank"
-                    className="text-blue-600 font-semibold"
-                  >
-                    Astra Laboratories
-                  </a>
-                  <p>
-                    A non profit that builds software to serve people. Their app
-                    Verena was a big inspiritation in how I see the
-                    possibilities and future of software.
-                  </p>
-                </li>
+                <WikiSeeAlso
+                  id="#HackerTab"
+                  url="https://hackertab.dev/"
+                  title="HackerTab"
+                  body=" Free and open-source homepage extension that I like to use to explore articles, github repos and conversations surrounding JavaScript, TypeScript, AI and Machine Learning."
+                />
+                <WikiSeeAlso
+                  id="#Ollama"
+                  url="https://github.com/ollama/ollama"
+                  title="Ollama"
+                  body="  A really cool tool that allows you to run open-source LLMS
+                    locally."
+                />
+                <WikiSeeAlso
+                  id="#Julia_Evans_Blog"
+                  url="https://jvns.ca/"
+                  title="Julia Evans' blog"
+                  body=" No one can explain programming concepts like Julia Evans can! My favourite blog, especially when it comes to 'How computer thing works'"
+                />
+                <WikiSeeAlso
+                  id="#Astra_Laboratories"
+                  url="https://www.withastra.org/"
+                  title="Astra Laboratories"
+                  body="A non profit that builds software to serve people. Their app Verena was a big inspiritation in how I see the possibilities and future of software."
+                />
               </ul>
             </main>
             <WikiSidebar />
