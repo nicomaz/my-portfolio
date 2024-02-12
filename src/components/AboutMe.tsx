@@ -9,21 +9,22 @@ interface Props {
   section: string;
 }
 
-export default function AboutMe({ setSection }: Props) {
+export default function AboutMe({ setSection, section }: Props) {
   const [skillsOpened, setSkillsOpened] = useState(false);
+  const [seeAlsoOpened, setSeeAlsoOpened] = useState(false);
 
   const scrollToComponent = (componentId: string) => {
     const element = document.getElementById(componentId);
     setSection(componentId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      element.scrollIntoView({ behavior: "auto", block: "start" });
     }
   };
 
   return (
     <div className="w-full h-[30rem] bg-white rounded-b-xl pt-1 px-14 overflow-scroll">
       <div className="grid grid-cols-[max-content_1fr]">
-        <span className="flex flex-row">
+        <span className="flex flex-row" id=" ">
           <img src={wikipediaLogo} alt="wikipedia logo" className="size-14" />
           <span className="flex flex-col ml-1">
             <img
@@ -53,18 +54,29 @@ export default function AboutMe({ setSection }: Props) {
             </button>
           </span>
         </div>
-        <div className="mt-2">
+        <div className="mt-2 sticky block bottom-0 left-0 top-0 right-0 h-content overflow-y-auto overflow-x-hidden self-start">
           <h3 className="font-bold text-sm pt-9 pl-4 tracking-tight">
             Contents
           </h3>
           <hr className="w-content ml-4" />
           <nav>
             <ul className="text-sm pl-3 tracking-tight">
-              <li className="ml-1">(Top)</li>
+              <li
+                className="ml-1"
+                onClick={() => {
+                  scrollToComponent(" ");
+                }}
+              >
+                (Top)
+              </li>
               <li
                 onClick={() => {
                   setSkillsOpened(!skillsOpened);
+                  scrollToComponent("#Skills");
                 }}
+                className={`${
+                  section === "#Skills" ? "font-bold" : "font-medium"
+                }`}
               >
                 <span className="material-symbols-outlined text-base">
                   {skillsOpened ? "expand_more" : "navigate_next"}
@@ -74,24 +86,113 @@ export default function AboutMe({ setSection }: Props) {
               {skillsOpened ? (
                 <ul className="pl-2">
                   <li
+                    className={`${
+                      section === "#Programming_Language"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5 `}
                     onClick={() => scrollToComponent("#Programming_Language")}
                   >
                     Programming Languages
                   </li>
 
                   <li
+                    className={`${
+                      section === "#Frontend_Development"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5`}
                     onClick={() => scrollToComponent("#Frontend_Development")}
                   >
                     Front-end development
                   </li>
-                  <li onClick={() => scrollToComponent("#Backend_Development")}>
+                  <li
+                    className={`${
+                      section === "#Backend_Development"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5`}
+                    onClick={() => scrollToComponent("#Backend_Development")}
+                  >
                     Back-end development
                   </li>
-                  <li onClick={() => scrollToComponent("#Database_and_DevOps")}>
+                  <li
+                    className={`${
+                      section === "#Database_and_DevOps"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5`}
+                    onClick={() => scrollToComponent("#Database_and_DevOps")}
+                  >
                     Database and DevOps
                   </li>
-                  <li onClick={() => scrollToComponent("#Currently_Learning")}>
+                  <li
+                    className={`${
+                      section === "#Currently_Learning"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5`}
+                    onClick={() => scrollToComponent("#Currently_Learning")}
+                  >
                     Currently Learning
+                  </li>
+                </ul>
+              ) : null}
+              <li
+                onClick={() => {
+                  setSeeAlsoOpened(!seeAlsoOpened);
+                  scrollToComponent("#See_Also");
+                }}
+                className={`${
+                  section === "#See_Also" ? "font-bold" : "font-medium"
+                }`}
+              >
+                <span className="material-symbols-outlined text-base">
+                  {seeAlsoOpened ? "expand_more" : "navigate_next"}
+                </span>
+                See Also
+              </li>
+              {seeAlsoOpened ? (
+                <ul className="pl-2">
+                  <li
+                    className={`${
+                      section === "#HackerTab"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5 `}
+                    onClick={() => scrollToComponent("#HackerTab")}
+                  >
+                    HackerTab
+                  </li>
+                  <li
+                    className={`${
+                      section === "#Ollama"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5 `}
+                    onClick={() => scrollToComponent("#Ollama")}
+                  >
+                    Ollama
+                  </li>
+                  <li
+                    className={`${
+                      section === "#Julia_Evans_Blog"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5 `}
+                    onClick={() => scrollToComponent("#Julia_Evans_Blog")}
+                  >
+                    Julia Evans' blog
+                  </li>
+                  <li
+                    className={`${
+                      section === "#Astra_Laboratories"
+                        ? "font-bold text-black"
+                        : "text-blue-600"
+                    } py-0.5 `}
+                    onClick={() => scrollToComponent("#Astra_Laboratories")}
+                  >
+                    Astra Laboratories
                   </li>
                 </ul>
               ) : null}
@@ -136,7 +237,9 @@ export default function AboutMe({ setSection }: Props) {
                 have a keen interest in all things open-source and my goal is to
                 consistently contribute to open source software in the future.
               </div>
-              <h4 className="text-xl font-medium font-serif mt-4">Skills</h4>
+              <h4 className="text-xl font-medium font-serif mt-4" id="#Skills">
+                Skills
+              </h4>
               <hr className="w-content" />
 
               <h5
@@ -201,6 +304,73 @@ export default function AboutMe({ setSection }: Props) {
                     skill.concern === "Learning" && <li>{skill.name}</li>
                 )}
               </ul>
+              <h4
+                className="text-xl font-medium font-serif mt-4"
+                id="#See_Also"
+              >
+                See Also
+              </h4>
+              <hr className="w-content" />
+              <span className="text-xs italic">
+                Some projects, blogs and the like that I'm interested in
+              </span>
+              <ul className="list-disc ml-3 mt-3">
+                <li className="mb-2" id="#HackerTab">
+                  <a
+                    href="https://hackertab.dev/"
+                    target="_blank"
+                    className="text-blue-600 font-semibold"
+                  >
+                    HackerTab
+                  </a>
+                  <p>
+                    Free and open-source homepage extension that I like to use
+                    to explore articles, github repos and conversations
+                    surrounding JavaScript, TypeScript, AI and Machine Learning.
+                  </p>
+                </li>
+                <li className="mb-2" id="#Ollama">
+                  <a
+                    href="https://github.com/ollama/ollama"
+                    target="_blank"
+                    className="text-blue-600 font-semibold"
+                  >
+                    Ollama
+                  </a>
+                  <p>
+                    A really cool tool that allows you to run open-source LLMS
+                    locally.
+                  </p>
+                </li>
+                <li className="mb-2" id="#Julia_Evans_Blog">
+                  <a
+                    href="https://jvns.ca/"
+                    target="_blank"
+                    className="text-blue-600 font-semibold"
+                  >
+                    Julia Evans' blog
+                  </a>
+                  <p>
+                    No one can explain programming concepts like Julia Evans
+                    can! My favourite blog, especially when it comes to 'How
+                    computer thing work'
+                  </p>
+                </li>
+                <li className="mb-2" id="#Astra_Laboratories">
+                  <a
+                    href="https://www.withastra.org/"
+                    target="_blank"
+                    className="text-blue-600 font-semibold"
+                  >
+                    Astra Laboratories
+                  </a>
+                  <p>
+                    A non profit that builds software to serve people. Their app
+                    Verena was a big inspiritation in how I see the
+                    possibilities and future of software.{" "}
+                  </p>
+                </li>
+              </ul>
             </div>
 
             <div className="bg-gray-200 w-56 h-72 border-[0.5px] border-gray-800 text-center p-1">
@@ -208,8 +378,8 @@ export default function AboutMe({ setSection }: Props) {
             </div>
           </div>
         </div>
+        <div className="w-full h-[5rem]"></div>
       </div>
-      <div className="w-full h-[30rem]"></div>
     </div>
   );
 }
