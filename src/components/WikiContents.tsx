@@ -25,7 +25,7 @@ export default function WikiContents({ setSection, section }: Props) {
       <hr className="w-content ml-4" />
       <ul className="text-sm pl-3 tracking-tight">
         <li
-          className="ml-1 mt-1"
+          className={`${section === " " ? "font-bold" : "font-medium"} ml-1 mt-1`}
           onClick={() => {
             scrollToComponent(" ");
           }}
@@ -49,7 +49,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Programming_Language"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5 `}
               onClick={() => scrollToComponent("#Programming_Language")}
@@ -60,7 +60,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Frontend_Development"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5`}
               onClick={() => scrollToComponent("#Frontend_Development")}
@@ -70,7 +70,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Backend_Development"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5`}
               onClick={() => scrollToComponent("#Backend_Development")}
@@ -80,7 +80,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Database_and_DevOps"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5`}
               onClick={() => scrollToComponent("#Database_and_DevOps")}
@@ -90,7 +90,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Currently_Learning"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5`}
               onClick={() => scrollToComponent("#Currently_Learning")}
@@ -116,7 +116,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#HackerTab"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5 `}
               onClick={() => scrollToComponent("#HackerTab")}
@@ -125,7 +125,9 @@ export default function WikiContents({ setSection, section }: Props) {
             </li>
             <li
               className={`${
-                section === "#Ollama" ? "font-bold text-black" : "text-blue-600"
+                section === "#Ollama"
+                  ? "font-bold text-black dark:text-gray-300"
+                  : "text-blue-600"
               } py-0.5 `}
               onClick={() => scrollToComponent("#Ollama")}
             >
@@ -134,7 +136,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Julia_Evans_Blog"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5 `}
               onClick={() => scrollToComponent("#Julia_Evans_Blog")}
@@ -144,7 +146,7 @@ export default function WikiContents({ setSection, section }: Props) {
             <li
               className={`${
                 section === "#Astra_Laboratories"
-                  ? "font-bold text-black"
+                  ? "font-bold text-black dark:text-gray-300"
                   : "text-blue-600"
               } py-0.5 `}
               onClick={() => scrollToComponent("#Astra_Laboratories")}
