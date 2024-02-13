@@ -102,6 +102,15 @@ export default function AboutMe({
                 have a keen interest in all things open-source and my goal is to
                 consistently contribute to open source software in the future.
               </div>
+              <Media queries={{ small: { maxWidth: 599 } }}>
+                {(matches) =>
+                  matches.small ? (
+                    <div className="flex flex-row justify-center my-5">
+                      <WikiSidebar />
+                    </div>
+                  ) : null
+                }
+              </Media>
               <h4 className="text-xl font-medium font-serif mt-4" id="#Skills">
                 Skills
               </h4>
