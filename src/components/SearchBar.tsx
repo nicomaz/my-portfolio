@@ -18,7 +18,7 @@ export default function SearchBar({ activeTab, section }: Props) {
           value={
             activeTab === "About Me"
               ? `https://en.wikipedia.org/wiki/Nicola_Mazuryk${section}`
-              : "https://en.wikipedia.org/wiki/Skills"
+              : "https://en.wikipedia.org/wiki/Projects"
           }
           defaultValue={
             activeTab === "About Me"
