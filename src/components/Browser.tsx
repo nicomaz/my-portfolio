@@ -53,19 +53,38 @@ export default function Browser({
           <Media queries={{ small: { maxWidth: 599 } }}>
             {(matches) =>
               matches.small ? (
-                <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
-                  <Buttons
-                    setWindowOpen={setBrowserOpen}
-                    setWindowMinimised={setBrowserMinimised}
-                    setWindowExpanded={setBrowserExpanded}
-                    windowExpanded={browserExpanded}
-                  />
+                <div>
+                  <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
+                    <Buttons
+                      setWindowOpen={setBrowserOpen}
+                      setWindowMinimised={setBrowserMinimised}
+                      setWindowExpanded={setBrowserExpanded}
+                      windowExpanded={browserExpanded}
+                    />
 
-                  <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
+                    <BrowserMenu
+                      setShowTabs={setShowTabs}
+                      showTabs={showTabs}
+                    />
 
-                  <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
-                    <SearchBar activeTab={activeTab} section={section} />
-                  </div>
+                    <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
+                      <SearchBar activeTab={activeTab} section={section} />
+                    </div>
+                  </div>{" "}
+                  {showTabs ? (
+                    <TabsContainer
+                      setActiveTab={setActiveTab}
+                      setShowTabs={setShowTabs}
+                    />
+                  ) : (
+                    activeTab === "About Me" && (
+                      <AboutMe
+                        setSection={setSection}
+                        section={section}
+                        browserExpanded={browserExpanded}
+                      />
+                    )
+                  )}
                 </div>
               ) : (
                 <>
@@ -98,20 +117,6 @@ export default function Browser({
               )
             }
           </Media>
-          {showTabs ? (
-            <TabsContainer
-              setActiveTab={setActiveTab}
-              setShowTabs={setShowTabs}
-            />
-          ) : (
-            activeTab === "About Me" && (
-              <AboutMe
-                setSection={setSection}
-                section={section}
-                browserExpanded={browserExpanded}
-              />
-            )
-          )}
         </div>
       </div>
     </Draggable>
