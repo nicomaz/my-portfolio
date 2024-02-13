@@ -3,9 +3,13 @@ import CV from "../assets/Nicola_Mazuryk_CV.pdf";
 
 export default function WikiSidebar() {
   return (
-    <div className="bg-gray-200 w-56 h-[45rem] border-[0.5px] border-gray-800 dark:bg-slate-800 text-center p-1 flex flex-col items-center">
+    <div className="bg-gray-200 w-96 w-[85vw] sm:w-56 h-content sm:h-[45rem] border-[0.5px] border-gray-800 dark:bg-slate-800 text-center p-1 flex flex-col items-center">
       <h3 className="font-semibold">Nicola Mazuryk</h3>
-      <img src={personalPhoto} alt="girl smiling" className="px-4 py-1" />
+      <img
+        src={personalPhoto}
+        alt="girl smiling"
+        className="px-12 sm:px-4 py-1"
+      />
       <h5 className="text-xs leading-tight font-bold w-[95%] dark:bg-indigo-900  h-content bg-indigo-200 justify-center my-0.5">
         Trainee Software Developer
       </h5>
