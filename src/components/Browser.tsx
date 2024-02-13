@@ -7,7 +7,7 @@ import BrowserMenu from "./BrowserMenu";
 import TabsContainer from "./TabsContainer";
 import SearchBar from "./SearchBar";
 import AboutMe from "./AboutMe";
-
+import Projects from "./Projects";
 
 interface Props {
   setBrowserOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -77,14 +77,14 @@ export default function Browser({
                       setActiveTab={setActiveTab}
                       setShowTabs={setShowTabs}
                     />
+                  ) : activeTab === "About Me" ? (
+                    <AboutMe
+                      setSection={setSection}
+                      section={section}
+                      browserExpanded={browserExpanded}
+                    />
                   ) : (
-                    activeTab === "About Me" && (
-                      <AboutMe
-                        setSection={setSection}
-                        section={section}
-                        browserExpanded={browserExpanded}
-                      />
-                    )
+                    <Projects browserExpanded={browserExpanded} />
                   )}
                 </div>
               ) : (
@@ -107,12 +107,14 @@ export default function Browser({
                   <div className="bg-blue-200 dark:bg-blue-900 w-full h-[2.5rem] z-30 relative top-shadow">
                     <SearchBar activeTab={activeTab} section={section} />
                   </div>
-                  {activeTab === "About Me" && (
+                  {activeTab === "About Me" ? (
                     <AboutMe
                       setSection={setSection}
                       section={section}
                       browserExpanded={browserExpanded}
                     />
+                  ) : (
+                    <Projects browserExpanded={browserExpanded} />
                   )}
                 </>
               )
