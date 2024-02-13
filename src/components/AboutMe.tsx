@@ -1,10 +1,11 @@
-import wikipediaLogo from "../assets/wikipedia.png";
-import wikipediaName from "../assets/wikipedia-logo.png";
-import wikipediaSub from "../assets/wikipedia-sub.png";
 import WikiContents from "./WikiContents";
 import WikiList from "./WikiList";
 import WikiSidebar from "./WikiSidebar";
 import WikiSeeAlso from "./WikiSeeAlso";
+import Media from "react-media";
+import WikipediaLogo from "./WikipediaLogo";
+import WikipediaSearchBar from "./WikipediaSearchBar";
+import wikipediaName from "../assets/wikipedia-logo.png";
 
 interface Props {
   setSection: React.Dispatch<React.SetStateAction<string>>;
@@ -20,72 +21,76 @@ export default function AboutMe({
   return (
     <div
       className={` ${
-        browserExpanded ? "h-full" : "h-[30rem]"
-      } w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 px-14 overflow-scroll`}
+        browserExpanded ? "h-full" : "h-[calc(100vh-15rem)] sm:h-[30rem]"
+      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 sm:px-14 px-2 overflow-scroll`}
     >
-      <div className="grid grid-cols-[max-content_1fr]">
-        <span className="flex flex-row" id=" ">
-          <img src={wikipediaLogo} alt="wikipedia logo" className="size-14" />
-          <span className="flex flex-col ml-1 dark:invert ">
-            <img
-              src={wikipediaName}
-              alt="text saying wikipedia"
-              className="h-4 mt-4"
-            />
-            <img
-              src={wikipediaSub}
-              alt="text saying 'The Free Encyclopedia'"
-              className="h-2 mt-1 ml-1"
-            />
-          </span>
-        </span>
-        <div className="w-full ml-12">
-          <span className="w-3/6 border-[0.3px] border-black h-7 mt-4 flex items-center dark:bg-gray-800">
-            <span className="material-symbols-outlined text-xl text-gray-400 dark:text-gray-200">
-              search
-            </span>
-            <input
-              type="text"
-              placeholder="Search Wikipedia"
-              className="justify-center border-r-[0.3px] w-full border-r-black dark:bg-gray-800"
-            ></input>
-            <button className="h-7 text-center font-bold text-xs px-2 w-content bg-gray-100 border-y-[0.3px] border-y-black dark:bg-gray-800">
-              Search
-            </button>
-          </span>
-        </div>
-        <div className="mt-2 sticky block bottom-0 left-0 top-0 right-0 h-content overflow-y-auto overflow-x-hidden self-start">
-          <nav>
-            <WikiContents setSection={setSection} section={section} />
-          </nav>
-        </div>
-        <div className="ml-12 mt-2">
+      <div className="grid sm:grid-cols-[max-content_1fr]">
+        <Media queries={{ small: { maxWidth: 599 } }}>
+          {(matches) =>
+            matches.small ? (
+              <span className="flex flex-row justify-between">
+                <img
+                  src={wikipediaName}
+                  alt="text saying wikipedia"
+                  className="h-4 mt-3 sm:mt-4 dark:invert"
+                />
+                <span className="material-symbols-outlined text-xl text-gray-400 dark:text-gray-200">
+                  search
+                </span>
+              </span>
+            ) : (
+              <>
+                <WikipediaLogo />
+                <WikipediaSearchBar />
+              </>
+            )
+          }
+        </Media>
+
+        <Media queries={{ small: { maxWidth: 599 } }}>
+          {(matches) =>
+            matches.small ? null : (
+              <div className="mt-2 sticky block bottom-0 left-0 top-0 right-0 h-content overflow-y-auto overflow-x-hidden self-start">
+                <nav>
+                  <WikiContents setSection={setSection} section={section} />
+                </nav>
+              </div>
+            )
+          }
+        </Media>
+
+        <div className="sm:ml-12 sm:mt-2 mt-6">
           <span className="flex flex-row justify-between">
             <h1 className="text-2xl font-medium font-serif tracking-tight">
               Nicola Mazuryk
             </h1>
-            <span className="flex flex-row tracking-tight">
+            <span className="sm:flex flex-row tracking-tight hidden">
               <span className="font-bold text-sm tracking-tight">
                 2 Languages
               </span>
               <span className="material-symbols-outlined">arrow_drop_down</span>
             </span>
           </span>
-          <hr className="w-content" />
+          <hr className="sm:w-content w-0 mb-2 sm:mb-0" />
           <span className="flex flex-row justify-between tracking-tight">
             <span className=" flex flex-row gap-3">
               <h3 className="text-sm my-1">Article</h3>
               <h3 className="text-sm my-1">Talk</h3>
             </span>
-            <span className="flex flex-row gap-2 tracking-tight">
+            <span className="sm:flex flex-row gap-2 tracking-tight hidden ">
               <h3 className="text-sm my-1">Read</h3>
               <h3 className="text-sm my-1">View source</h3>
             </span>
           </span>
           <hr className="w-content" />
-          <span className="text-xs">From Wikipedia, the free encyclopedia</span>
+          <span className="material-symbols-outlined sm:hidden text-lg mt-2">
+            translate
+          </span>
+          <span className="text-xs hidden sm:block sm:mt-2">
+            From Wikipedia, the free encyclopedia
+          </span>
           <div className="text-sm mt-2 grid grid-cols-[1fr_max-content]">
-            <main className="pr-4 text-pretty">
+            <main className="sm:pr-4 text-pretty">
               <div>
                 With experience in building full-stack applications & websites,
                 I possess a range of skills that allow me to create modern
@@ -166,7 +171,9 @@ export default function AboutMe({
                 />
               </ul>
             </main>
-            <WikiSidebar />
+            <Media queries={{ small: { maxWidth: 599 } }}>
+              {(matches) => (matches.small ? null : <WikiSidebar />)}
+            </Media>
           </div>
         </div>
       </div>

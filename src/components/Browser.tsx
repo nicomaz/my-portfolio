@@ -8,6 +8,7 @@ import TabsContainer from "./TabsContainer";
 import SearchBar from "./SearchBar";
 import AboutMe from "./AboutMe";
 
+
 interface Props {
   setBrowserOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setBrowserMinimised: React.Dispatch<React.SetStateAction<boolean>>;
@@ -70,7 +71,7 @@ export default function Browser({
                     <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
                       <SearchBar activeTab={activeTab} section={section} />
                     </div>
-                  </div>{" "}
+                  </div>
                   {showTabs ? (
                     <TabsContainer
                       setActiveTab={setActiveTab}
