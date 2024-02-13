@@ -1,6 +1,6 @@
 import Draggable from "react-draggable";
 import Buttons from "./Buttons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BrowserTabs from "./BrowserTabs";
 import Media from "react-media";
 import BrowserMenu from "./BrowserMenu";
@@ -25,6 +25,10 @@ export default function Browser({
   const [showTabs, setShowTabs] = useState<boolean>(false);
   const [browserExpanded, setBrowserExpanded] = useState<boolean>(false);
   const [section, setSection] = useState<string>("");
+
+  useEffect(() => {
+    console.log(activeTab);
+  }, [activeTab]);
 
   return (
     <Draggable handle=".handle">
@@ -56,7 +60,9 @@ export default function Browser({
                     setWindowExpanded={setBrowserExpanded}
                     windowExpanded={browserExpanded}
                   />
+
                   <BrowserMenu setShowTabs={setShowTabs} showTabs={showTabs} />
+
                   <div className="w-full bg-[#ccd4e8] dark:bg-slate-600 h-[3rem] absolute bottom-10 top-shadow">
                     <SearchBar activeTab={activeTab} section={section} />
                   </div>
@@ -71,6 +77,7 @@ export default function Browser({
                       setWindowExpanded={setBrowserExpanded}
                       windowExpanded={browserExpanded}
                     />
+
                     <BrowserTabs
                       activeTab={activeTab}
                       setActiveTab={setActiveTab}
@@ -78,14 +85,33 @@ export default function Browser({
                   </div>
 
                   <div className="bg-blue-200 dark:bg-blue-900 w-full h-[2.5rem] z-30 relative top-shadow">
-                    <SearchBar activeTab={activeTab} section={section}/>
+                    <SearchBar activeTab={activeTab} section={section} />
                   </div>
-                  {activeTab === "About Me" && <AboutMe setSection={setSection}  section={section} browserExpanded={browserExpanded}/>}
+                  {activeTab === "About Me" && (
+                    <AboutMe
+                      setSection={setSection}
+                      section={section}
+                      browserExpanded={browserExpanded}
+                    />
+                  )}
                 </>
               )
             }
           </Media>
-          {showTabs ? <TabsContainer /> : null}
+          {showTabs ? (
+            <TabsContainer
+              setActiveTab={setActiveTab}
+              setShowTabs={setShowTabs}
+            />
+          ) : (
+            activeTab === "About Me" && (
+              <AboutMe
+                setSection={setSection}
+                section={section}
+                browserExpanded={browserExpanded}
+              />
+            )
+          )}
         </div>
       </div>
     </Draggable>
