@@ -1,5 +1,6 @@
 import DuckBar from "./DuckBar";
 import DuckDuckGoSearch from "./DuckDuckGoSearch";
+import ResultsContainer from "./ResultsContainer";
 
 interface Props {
   browserExpanded: boolean;
@@ -19,6 +20,9 @@ export default function Projects({ browserExpanded }: Props) {
         </div>
       </div>
       <hr className="w-full px-0 ml-0" />
+      <div className="ml-[6.5rem] mt-2">
+        <ResultsContainer />
+      </div>
     </div>
   );
 }

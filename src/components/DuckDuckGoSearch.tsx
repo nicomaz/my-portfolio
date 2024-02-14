@@ -9,7 +9,7 @@ export default function DuckDuckGoSearch() {
         className="size-11 mt-1"
       />
       <div className="w-screen sm:w-full sm:ml-5">
-        <span className="w-3/6 border-[1px] border-gray-300 h-10 mt-2 flex items-center dark:bg-gray-800 rounded-md b-shadow">
+        <span className="w-[45rem] border-[1px] border-gray-300 h-10 mt-2 flex items-center dark:bg-gray-800 rounded-md b-shadow">
           <input
             type="text"
             placeholder=""
