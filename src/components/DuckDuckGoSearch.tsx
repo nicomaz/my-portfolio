@@ -6,7 +6,7 @@ export default function DuckDuckGoSearch() {
       <img
         src={duckduckgoLogo}
         alt="duck duck go loco, a duck"
-        className="size-11 mt-1"
+        className="size-10 mt-1.5 ml-[-15px] mr-[15px]"
       />
       <div className="w-screen sm:w-full sm:ml-5">
         <span className="w-[45rem] border-[1px] border-gray-300 h-10 mt-2 flex items-center dark:bg-gray-800 rounded-md b-shadow">

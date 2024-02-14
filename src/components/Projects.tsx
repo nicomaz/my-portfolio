@@ -11,7 +11,7 @@ export default function Projects({ browserExpanded }: Props) {
     <div
       className={` ${
         browserExpanded ? "h-full" : "h-[calc(100vh-15rem)] sm:h-[30rem]"
-      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 overflow-scroll`}
+      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 overflow-scroll pl-24`}
     >
       <div className="px-10">
         <DuckDuckGoSearch />
@@ -19,8 +19,8 @@ export default function Projects({ browserExpanded }: Props) {
           <DuckBar />
         </div>
       </div>
-      <hr className="w-full px-0 ml-0" />
-      <div className="ml-[6.5rem] mt-2">
+      <hr className="w-screen px-0 ml-[-6rem]" />
+      <div className="ml-[6.5rem] mt-2 mb-24">
         <ResultsContainer />
       </div>
     </div>
