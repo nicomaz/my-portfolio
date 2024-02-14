@@ -26,17 +26,18 @@ export default function IndivResult({
   return (
     <div className="mt-2 w-[45rem]">
       <div>
-        <span className="flex flex-inline items-center">
-          <img src={logo} alt={alt} className="size-4" />
-          <span className="text-sm ml-1 flex flex-row">
-            <a href={url}>
+        {" "}
+        <a href={url}>
+          <span className="flex flex-inline items-center">
+            <img src={logo} alt={alt} className="size-4" />
+            <span className="text-sm ml-1 flex flex-row">
               {" "}
               {firstLink}
               <span className="text-gray-600"> {secondLink}</span>
-            </a>
+            </span>
           </span>
-        </span>
-        <span className="text-blue-700 text-lg">{title}</span>
+          <span className="text-blue-700 text-lg">{title}</span>
+        </a>
       </div>
       <p className="text-sm text-gray-700">{body}</p>
       <div className="flex inline-flex justify-between overflow-x-auto overflow-y-hidden w-[45rem] h-content scrollbar-hide">
