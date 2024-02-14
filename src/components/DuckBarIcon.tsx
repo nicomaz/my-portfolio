@@ -1,10 +1,25 @@
 interface Props {
   iconType: string;
   iconName: string;
+  setTabClicked: React.Dispatch<React.SetStateAction<string>>;
+  tabClicked: string;
 }
-export default function DuckBarIcon({ iconType, iconName }: Props) {
+
+export default function DuckBarIcon({
+  iconType,
+  iconName,
+  setTabClicked,
+  tabClicked,
+}: Props) {
   return (
-    <button className="w-fit flex flex-row items-center text-gray-500 hover:text-gray-800 dark:text-gray-200 focus:text-blue-600 focus:border-b-2 focus:border-blue-600 border-b-2 border-b-white">
+    <button
+      className={` ${
+        tabClicked === iconName
+          ? "border-blue-600 text-blue-600"
+          : "border-b-white text-gray-500"
+      } w-fit flex flex-row items-center hover:text-gray-800 dark:text-gray-200 focus:border-b-2 focus:border-blue-600 border-b-2`}
+      onClick={() => setTabClicked(iconName)}
+    >
       <span
         className={`${
           iconName === "Videos" ? "text-2xl ml-[-6px]" : "text-lg"

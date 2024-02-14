@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DuckBar from "./DuckBar";
 import DuckDuckGoSearch from "./DuckDuckGoSearch";
 import ResultsContainer from "./ResultsContainer";
@@ -7,6 +8,8 @@ interface Props {
 }
 
 export default function Projects({ browserExpanded }: Props) {
+  const [tabClicked, setTabClicked] = useState("All");
+
   return (
     <div
       className={` ${
@@ -16,13 +19,15 @@ export default function Projects({ browserExpanded }: Props) {
       <div className="px-10">
         <DuckDuckGoSearch />
         <div className="ml-16 mt-1">
-          <DuckBar />
+          <DuckBar tabClicked={tabClicked} setTabClicked={setTabClicked} />
         </div>
       </div>
       <hr className="w-screen px-0 ml-[-6rem]" />
-      <div className="ml-[6.5rem] mt-2 mb-24">
-        <ResultsContainer />
-      </div>
+      {tabClicked === "All" && (
+        <div className="ml-[6.5rem] mt-2 mb-24">
+          <ResultsContainer />
+        </div>
+      )}
     </div>
   );
 }

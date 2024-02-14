@@ -65,7 +65,7 @@ export default function ResultsContainer() {
         secondLink=""
         githubLink="https://github.com/nicomaz/portfolio"
         title="My Portfolio"
-        body="My portfolio was built with inspiration from OS X. Mostly styled using TailwindCSS and animated using CSS. I wanted to make something creative and unique that would challenge my front-end skills and also teach me TypeScript."
+        body="My portfolio was built with inspiration from OS X. Mostly styled using TailwindCSS and animated using CSS. I wanted to make something creative and unique that would challenge my front-end skills while learning TypeScript."
         technologies={[
           "TypeScript",
           "React",
