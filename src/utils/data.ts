@@ -32,6 +32,7 @@ type ProjectImages = {
   title: string;
   projectLink: string;
   githubLink?: string;
+  id: number;
 };
 
 export const NoteInfo: NoteInfo[] = [
@@ -96,6 +97,7 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte home page",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 1,
   },
   {
     photo: interByteArticles,
@@ -103,6 +105,7 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte articles",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 2,
   },
   {
     photo: interByteComments,
@@ -110,6 +113,7 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte comment section",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 3,
   },
   {
     photo: interByteIndivArticle,
@@ -117,6 +121,7 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte individual article",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 4,
   },
   {
     photo: interByteLoggedOut,
@@ -124,6 +129,7 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte logged out user",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 5,
   },
   {
     photo: interByteTopics,
@@ -131,47 +137,55 @@ export const projectImages: ProjectImages[] = [
     title: "Interbyte sort by topics",
     projectLink: "https://interbyte.netlify.app/",
     githubLink: "https://github.com/nicomaz/byte-news",
+    id: 6,
   },
   {
     photo: sideQuestSignUp,
     alt: "page asking to pick a piece and username",
     title: "SideQuest sign up page",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 7,
   },
   {
     photo: sideQuestSignIn,
     alt: "page asking for phone number and verification code",
     title: "SideQuest sign in page",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 8,
   },
   {
     photo: sideQuestHomePage,
     alt: "home page with a map routing to different places in london",
     title: "SideQuest home page",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 9,
   },
   {
     photo: sideQuestProfile,
     alt: "a profile with users' piece, phone number, scrolls noting progression, their completed quests and a sign out button",
     title: "SideQuest profile",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 10,
   },
   {
     photo: sideQuestProgression,
     alt: "cards with different quests that are locked and unlocked",
     title: "SideQuest user progression",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 12,
   },
   {
     photo: sideQuestQuest,
     alt: "two questions, with inputs for answers. one with a red box and one with a green box",
     title: "SideQuest quest questions",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 13,
   },
   {
     photo: sideQuestCard,
     alt: "a card on top of the home pages' map denoting the quest the user has clicked",
     title: "SideQuest quest clicked on map",
     projectLink: "https://github.com/nicomaz/side-quest",
+    id: 14,
   },
 ];

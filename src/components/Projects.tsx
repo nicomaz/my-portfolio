@@ -2,6 +2,7 @@ import { useState } from "react";
 import DuckBar from "./DuckBar";
 import DuckDuckGoSearch from "./DuckDuckGoSearch";
 import ResultsContainer from "./ResultsContainer";
+import DuckImages from "./DuckImages";
 
 interface Props {
   browserExpanded: boolean;
@@ -23,9 +24,13 @@ export default function Projects({ browserExpanded }: Props) {
         </div>
       </div>
       <hr className="w-screen px-0 ml-[-6rem]" />
-      {tabClicked === "All" && (
+      {tabClicked === "All" ? (
         <div className="ml-[6.5rem] mt-2 mb-24">
           <ResultsContainer />
+        </div>
+      ) : (
+        <div className="mt-2 mb-24 ml-[-3rem]">
+          <DuckImages />
         </div>
       )}
     </div>
