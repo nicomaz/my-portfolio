@@ -31,7 +31,7 @@ export default function Projects({ browserExpanded }: Props) {
         </div>
       ) : tabClicked === "Images" ? (
         <div className="mt-2 mb-24 ml-[-3rem]">
-          <DuckImages />
+          <DuckImages browserExpanded={browserExpanded} />
         </div>
       ) : (
         <div className="mt-2 mb-24 ml-[-3rem]">

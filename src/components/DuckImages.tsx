@@ -3,7 +3,11 @@ import { projectImages } from "../utils/data";
 import { useState } from "react";
 import ExpandedImage from "./ExpandedImage";
 
-export default function DuckImages() {
+interface Props {
+  browserExpanded: boolean;
+}
+
+export default function DuckImages({browserExpanded}: Props) {
   const [imageClicked, setImageClicked] = useState<number>(0);
   const firstFiveElements = projectImages.slice(0, 5);
   const secondFiveElements = projectImages.slice(5, 10);
@@ -22,6 +26,7 @@ export default function DuckImages() {
             alt={projectImage.alt}
             id={projectImage.id}
             setImageClicked={setImageClicked}
+            browserExpanded={browserExpanded}
           />
         );
       })}
@@ -54,6 +59,7 @@ export default function DuckImages() {
             alt={projectImage.alt}
             id={projectImage.id}
             setImageClicked={setImageClicked}
+            browserExpanded={browserExpanded}
           />
         );
       })}
@@ -73,6 +79,7 @@ export default function DuckImages() {
                 github={projectImage.githubLink}
                 image={projectImage.photo}
                 alt={projectImage.alt}
+                
               />
             )
           );
@@ -88,6 +95,7 @@ export default function DuckImages() {
             alt={projectImage.alt}
             id={projectImage.id}
             setImageClicked={setImageClicked}
+            browserExpanded={browserExpanded}
           />
         );
       })}
