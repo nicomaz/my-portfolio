@@ -3,6 +3,7 @@ import DuckBar from "./DuckBar";
 import DuckDuckGoSearch from "./DuckDuckGoSearch";
 import ResultsContainer from "./ResultsContainer";
 import DuckImages from "./DuckImages";
+import DuckVideos from "./DuckVideos";
 
 interface Props {
   browserExpanded: boolean;
@@ -28,9 +29,13 @@ export default function Projects({ browserExpanded }: Props) {
         <div className="ml-[6.5rem] mt-2 mb-24">
           <ResultsContainer />
         </div>
-      ) : (
+      ) : tabClicked === "Images" ? (
         <div className="mt-2 mb-24 ml-[-3rem]">
           <DuckImages />
+        </div>
+      ) : (
+        <div className="mt-2 mb-24 ml-[-3rem]">
+          <DuckVideos />
         </div>
       )}
     </div>

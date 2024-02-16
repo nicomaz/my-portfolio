@@ -39,7 +39,6 @@ export default function DuckImages() {
                 github={projectImage.githubLink}
                 image={projectImage.photo}
                 alt={projectImage.alt}
-                id={projectImage.id}
               />
             )
           );
@@ -74,7 +73,6 @@ export default function DuckImages() {
                 github={projectImage.githubLink}
                 image={projectImage.photo}
                 alt={projectImage.alt}
-                id={projectImage.id}
               />
             )
           );
@@ -103,7 +101,6 @@ export default function DuckImages() {
                 github={projectImage.githubLink}
                 image={projectImage.photo}
                 alt={projectImage.alt}
-                id={projectImage.id}
               />
             )
           );
