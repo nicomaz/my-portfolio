@@ -18,14 +18,14 @@ export default function SearchBar({ activeTab, section }: Props) {
           value={
             activeTab === "About Me"
               ? `https://en.wikipedia.org/wiki/Nicola_Mazuryk${section}`
-              : "https://en.wikipedia.org/wiki/Skills"
+              : "https://duckduckgo.com/?t=ffab&q=projects&ia=web"
           }
           defaultValue={
             activeTab === "About Me"
               ? "https://en.wikipedia.org/wiki/Nicola_Mazuryk"
               : activeTab === "Skills"
               ? "https://en.wikipedia.org/wiki/Skills"
-              : "https://www.google.com/search?q=projects&iflsig=ANes7DEAAAAAZcEGklFyOxDgW4OE__qgzrtuE2lsZtEH&uact=5"
+              : "https://duckduckgo.com/?t=ffab&q=projects&ia=web"
           }
         />
       </label>

@@ -16,15 +16,11 @@ export default function BrowserTabs({ activeTab, setActiveTab }: Props) {
           activeTab={activeTab}
         />
         <Tab
-          tabName="Skills"
-          setActiveTab={setActiveTab}
-          activeTab={activeTab}
-        />
-        <Tab
           tabName="Projects"
           setActiveTab={setActiveTab}
           activeTab={activeTab}
         />
+        <Tab tabName="" setActiveTab={setActiveTab} activeTab={activeTab} />
       </nav>
     </ul>
   );

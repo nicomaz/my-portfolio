@@ -94,8 +94,27 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.215);
 }
 
+.b-shadow {
+  box-shadow: rgba(140, 140, 140, 0.2) 0px 2px 4px 0px;
+}
+
 .center {
   transform: translate(0px, 0px) !important;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 @keyframes hide {
@@ -321,12 +340,12 @@ li.dark:first-child a.active::after {
   background-color: #1e3a8a;
 }
 
-/* circle to right of skills */
+/* circle to right of projects */
 li.dark::after {
   background-color: #475569;
 }
 
-/* circle to right of skills */
+/* circle to right of projects */
 li::after {
   background-color: #e2e8f0;
 }
@@ -335,12 +354,12 @@ li.active::after {
   background-color: #e2e8f0;
 }
 
-/* square to left of skills */
+/* square to left of projects */
 li.dark::before {
   background-color: #475569;
 }
 
-/* square to right of skills */
+/* square to right of projects */
 li.dark a.not-active::after {
   background-color: #475569;
 }
@@ -353,7 +372,7 @@ li a.not-active::after {
   background-color: #e2e8f0;
 }
 
-/* circle to left of skills */
+/* circle to left of projects */
 li a.active::before {
   background-color: #e2e8f0;
 }
