@@ -14,8 +14,8 @@ export default function ExpandedImage({
   alt,
 }: Props) {
   return (
-    <div className="h-[30rem] bg-slate-900 grid order-2 mr-12">
-      <div className="flex justify-center justify-evenly mx-96">
+    <div className="h-[30rem] bg-slate-950 grid order-2 mr-12">
+      <div className="flex justify-center justify-evenly mx-">
         <div className="h-[30rem] w-[13rem] flex justify-center">
           <img src={image} alt={alt} className="object-contain" />
         </div>
