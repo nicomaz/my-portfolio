@@ -20,7 +20,6 @@ export default function BrowserTabs({ activeTab, setActiveTab }: Props) {
           setActiveTab={setActiveTab}
           activeTab={activeTab}
         />
-        <Tab tabName="" setActiveTab={setActiveTab} activeTab={activeTab} />
       </nav>
     </ul>
   );
