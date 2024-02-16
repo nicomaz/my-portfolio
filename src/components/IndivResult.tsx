@@ -33,13 +33,18 @@ export default function IndivResult({
             <span className="text-sm ml-1 flex flex-row">
               {" "}
               {firstLink}
-              <span className="text-gray-600"> {secondLink}</span>
+              <span className="text-gray-600 dark:text-gray-400">
+                {" "}
+                {secondLink}
+              </span>
             </span>
           </span>
-          <span className="text-blue-700 text-lg">{title}</span>
+          <span className="text-blue-700 text-lg dark:text-blue-500">
+            {title}
+          </span>
         </a>
       </div>
-      <p className="text-sm text-gray-700">{body}</p>
+      <p className="text-sm text-gray-700 dark:text-gray-300">{body}</p>
       <div className="flex inline-flex justify-between overflow-x-auto overflow-y-hidden w-[45rem] h-content scrollbar-hide">
         <span className="flex inline-flex gap-2 mt-1 h-content">
           {technologies.map((technologies) => {

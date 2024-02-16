@@ -15,9 +15,9 @@ export default function DuckBarIcon({
     <button
       className={` ${
         tabClicked === iconName
-          ? "border-blue-600 text-blue-600"
-          : "border-b-white text-gray-500"
-      } w-fit flex flex-row items-center hover:text-gray-800 dark:text-gray-200 focus:border-b-2 focus:border-blue-600 border-b-2`}
+          ? "border-blue-600 text-blue-600 dark:text-blue-600"
+          : "border-b-white dark:border-b-slate-900 text-gray-500 dark:text-gray-200"
+      } w-fit flex flex-row items-center hover:text-gray-800 focus:border-b-2 focus:border-blue-600 border-b-2`}
       onClick={() => setTabClicked(iconName)}
     >
       <span
