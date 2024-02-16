@@ -2,20 +2,51 @@ import SingleImage from "./SingleImage";
 import { projectImages } from "../utils/data";
 import { useState } from "react";
 import ExpandedImage from "./ExpandedImage";
+import Media from "react-media";
+import MobileExpandedImage from "./MobileExpandedImage";
 
 interface Props {
   browserExpanded: boolean;
 }
 
-export default function DuckImages({browserExpanded}: Props) {
+export default function DuckImages({ browserExpanded }: Props) {
   const [imageClicked, setImageClicked] = useState<number>(0);
+  const [expandImage, setExpandImage] = useState<boolean>(false);
   const firstFiveElements = projectImages.slice(0, 5);
   const secondFiveElements = projectImages.slice(5, 10);
   const lastElements = projectImages.slice(10, 13);
-  console.log(imageClicked);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-y-3 w-full h-fit">
+    <div
+      className="grid grid-cols-2 md:grid-cols-5 gap-y-3 w-full h-fit px-2 sm:px-0"
+      onClick={() => {
+        setExpandImage(true);
+      }}
+    >
+      {expandImage ? (
+        <Media queries={{ small: { maxWidth: 599 } }}>
+          {(matches) =>
+            matches.small
+              ? projectImages.map((projectImage) => {
+                  return (
+                    projectImage.id === imageClicked && (
+                      <MobileExpandedImage
+                        title={projectImage.title}
+                        link={projectImage.projectLink}
+                        github={projectImage.githubLink}
+                        image={projectImage.photo}
+                        alt={projectImage.alt}
+                        setExpandImage={setExpandImage}
+                        setImageClicked={setImageClicked}
+                      />
+                    )
+                  );
+                })
+              : null
+          }
+        </Media>
+      ) : null}
+
       {firstFiveElements.map((projectImage) => {
         return (
           <SingleImage
@@ -79,7 +110,6 @@ export default function DuckImages({browserExpanded}: Props) {
                 github={projectImage.githubLink}
                 image={projectImage.photo}
                 alt={projectImage.alt}
-                
               />
             )
           );
