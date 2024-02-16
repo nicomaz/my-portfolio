@@ -19,7 +19,7 @@ export default function SingleImage({
   setImageClicked,
 }: Props) {
   return (
-    <div className="grid" onClick={() => setImageClicked(id)}>
+    <div className="grid cursor-pointer" onClick={() => setImageClicked(id)}>
       <div
         className={`${
           browserExpanded ? "h-52 w-64" : "h-32 w-44"
@@ -27,7 +27,7 @@ export default function SingleImage({
       >
         <img src={image} alt={alt} className="object-scale-down" />
       </div>
-      <h5 className="font-bold text-sm">{title}</h5>
+      <h5 className="font-bold text-sm truncate">{title}</h5>
       <h6 className="text-xs">{link}</h6>
     </div>
   );

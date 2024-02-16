@@ -24,7 +24,7 @@ export default function IndivResult({
   githubLink,
 }: Props) {
   return (
-    <div className="mt-2 w-[45rem]">
+    <div className="mt-2 sm:w-[45rem] sm:mx-0 sm:dark:bg-slate-900 dark:bg-slate-800 rounded-md p-3 sm:p-0">
       <div>
         {" "}
         <a href={url}>
@@ -45,14 +45,18 @@ export default function IndivResult({
         </a>
       </div>
       <p className="text-sm text-gray-700 dark:text-gray-300">{body}</p>
-      <div className="flex inline-flex justify-between overflow-x-auto overflow-y-hidden w-[45rem] h-content scrollbar-hide">
-        <span className="flex inline-flex gap-2 mt-1 h-content">
+      <div className="flex justify-between overflow-x-auto overflow-y-hidden sm:w-[45rem] w-full h-content scrollbar-hide">
+        <span className="flex gap-2 mt-1 h-content">
           {technologies.map((technologies) => {
             return <TechnologyWidget widgetName={technologies} />;
           })}
         </span>
         {githubLink && (
-          <a href={githubLink} target="_blank">
+          <a
+            href={githubLink}
+            target="_blank"
+            className="self-center mt-1 ml-2 sm:mt-0 sm:ml-0 sm:self-end"
+          >
             <TechnologyWidget widgetName="GitHub" />
           </a>
         )}

@@ -4,7 +4,7 @@ import interbyteLogo from "../assets/interbyteLogo.png";
 
 export default function ResultsContainer() {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 mx-2 sm:mx-0">
       <IndivResult
         logo={githubLogo}
         alt="github logo"
