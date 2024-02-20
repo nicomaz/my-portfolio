@@ -9,39 +9,32 @@ interface Props {
 export default function Header({ appOpen = "Portfolio", fade }: Props) {
   return (
     <div
-      className={
-        fade
-          ? "down dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-blur-[3px] w-screen drop-shadow-lg h-shadow z-30"
-          : "dark:bg-slate-800/[0.6] bg-blue-200/[0.8] backdrop-blur-[3px] h-8 w-screen drop-shadow-lg h-shadow z-30"
-      }
+      className={`
+        ${
+          fade ? "down" : "h-8"
+        } dark:bg-slate-800/[0.6] bg-blue-200/[0.7] backdrop-blur-[3px] w-screen drop-shadow-lg h-shadow z-30 font-medium`}
     >
       <div>
         <span
-          className={
-            fade
-              ? "relative icon-down text-base font-semibold dark:text-white left-5 gap-5 flex flex-row w-full"
-              : "relative text-base font-semibold dark:text-white left-5 gap-5 top-2 flex flex-row w-full"
-          }
+          className={`
+           ${
+             fade ? "icon-down" : "top-2"
+           } relative text-base font-bold dark:text-white left-5 gap-5 flex flex-row w-full
+         `}
         >
           <span>
             <ThemeSwitcher fade={fade} />
           </span>
         </span>
         <span
-          className={
-            fade
-              ? "text-down relative left-16 dark:text-white"
-              : "relative left-16 dark:text-white top-[-12px]"
-          }
+          className={` ${
+            fade ? "text-down" : "top-[-12px]"
+          } relative left-16 dark:text-white`}
         >
           {appOpen}
         </span>
       </div>
-      <span
-        className={
-          fade ? "time-down absolute right-0" : " top-0 absolute right-0"
-        }
-      >
+      <span className={`${fade ? "time-down" : "top-0"} absolute right-0`}>
         <Clock />
       </span>
     </div>

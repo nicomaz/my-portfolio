@@ -15,6 +15,7 @@ export default function HomePage({ fade }: Props) {
   const [noteMinimised, setNoteMinimised] = useState<boolean>(false);
   const [browserOpen, setBrowserOpen] = useState<boolean>(false);
   const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
+  const [appOpen, setAppOpen] = useState("Notepad");
 
   return (
     <div
@@ -29,7 +30,7 @@ export default function HomePage({ fade }: Props) {
       }}
     >
       <div className="w-screen h-screen">
-        <Header fade={fade} />
+        <Header fade={fade} appOpen={appOpen} />
 
         <Notes
           setNotepadOpen={setNotepadOpen}
@@ -53,6 +54,7 @@ export default function HomePage({ fade }: Props) {
           setBrowserOpen={setBrowserOpen}
           setBrowserMinimised={setBrowserMinimised}
           browserOpen={browserOpen}
+          setAppOpen={setAppOpen}
         />
       </div>
     </div>
