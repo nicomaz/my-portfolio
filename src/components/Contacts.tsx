@@ -2,6 +2,7 @@ import Draggable from "react-draggable";
 import Buttons from "./Buttons";
 import { useState } from "react";
 import { ContactInfo } from "../utils/data";
+import IndivContact from "./IndivContact";
 
 interface Props {
   setContactsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +22,7 @@ export default function Contacts({
   appClicked,
 }: Props) {
   const [contactsExpanded, setContactsExpanded] = useState<boolean>(false);
-  const [contactClicked, setContactClicked] = useState<string>("email");
+  const [contactClicked, setContactClicked] = useState<string>("Email");
 
   return (
     <Draggable handle=".handle">
@@ -44,8 +45,8 @@ export default function Contacts({
                 : contactsExpanded
                 ? contactsMinimised
                   ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                  : "mx-0 h-[calc(100vh-111px)] w-full sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[80rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                  : "mx-0 h-[calc(100vh-111px)] w-screen sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[50rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }
         >
@@ -85,7 +86,18 @@ export default function Contacts({
               })}
             </ul>
           </div>
-          <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg"></div>
+          <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg">
+            {ContactInfo.map((contact) => {
+              return contact.title === contactClicked ? (
+                <IndivContact
+                  title={contact.title}
+                  link={contact.link}
+                  body={contact.body}
+                  note={contact.note}
+                />
+              ) : null;
+            })}
+          </div>
         </div>
       </div>
     </Draggable>

@@ -40,7 +40,7 @@ type ContactInfo = {
   title: string;
   link?: string;
   body?: string;
-  note: string;
+  note?: string;
 };
 
 export const NoteInfo: NoteInfo[] = [
@@ -199,7 +199,7 @@ export const projectImages: ProjectImages[] = [
 ];
 
 export const ContactInfo: ContactInfo[] = [
-  { title: "Email", body: "nicolamazuryk@gmail.com", note: "" },
+  { title: "Email", body: "nicolamazuryk@gmail.com", note: "Click on my email to copy"},
   {
     title: "GitHub",
     body: "nicomaz",
@@ -208,9 +208,9 @@ export const ContactInfo: ContactInfo[] = [
   },
   {
     title: "LinkedIn",
-    body: "NicolaMazuryk",
+    body: "nicolamazuryk",
     link: "https://www.linkedin.com/in/nicolamazuryk/",
-    note: "Feel free to connect with me on linkedin",
+    note: "Feel free to connect with me on LinkedIn",
   },
   {
     title: "Resume",
