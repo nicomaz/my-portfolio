@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Notes from "../components/Notes";
 import Browser from "../components/Browser";
+import Contacts from "../components/Contacts";
 
 interface Props {
   fade: boolean;
@@ -15,6 +16,8 @@ export default function HomePage({ fade }: Props) {
   const [noteMinimised, setNoteMinimised] = useState<boolean>(false);
   const [browserOpen, setBrowserOpen] = useState<boolean>(false);
   const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
+  const [contactsOpen, setContactsOpen] = useState<boolean>(false);
+  const [contactsMinimised, setContactsMinimised] = useState<boolean>(false);
   const [appOpen, setAppOpen] = useState("Notepad");
   const [appClicked, setAppClicked] = useState("");
 
@@ -51,6 +54,15 @@ export default function HomePage({ fade }: Props) {
           browserOpen={browserOpen}
         />
 
+        <Contacts
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
+          setContactsMinimised={setContactsMinimised}
+          setContactsOpen={setContactsOpen}
+          contactsMinimised={contactsMinimised}
+          contactsOpen={contactsOpen}
+        />
+
         <Navbar
           fade={fade}
           setNotepadOpen={setNotepadOpen}
@@ -60,6 +72,9 @@ export default function HomePage({ fade }: Props) {
           setBrowserMinimised={setBrowserMinimised}
           browserOpen={browserOpen}
           setAppOpen={setAppOpen}
+          setContactsOpen={setContactsOpen}
+          setContactsMinimised={setContactsMinimised}
+          contactsOpen={contactsOpen}
         />
       </div>
     </div>

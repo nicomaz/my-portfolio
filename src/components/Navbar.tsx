@@ -14,6 +14,9 @@ interface Props {
   setBrowserMinimised: React.Dispatch<React.SetStateAction<boolean>>;
   browserOpen: boolean;
   setAppOpen: React.Dispatch<React.SetStateAction<string>>;
+  setContactsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setContactsMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  contactsOpen: boolean;
 }
 
 export default function Navbar({
@@ -25,6 +28,9 @@ export default function Navbar({
   setBrowserMinimised,
   setAppOpen,
   browserOpen,
+  setContactsOpen,
+  setContactsMinimised,
+  contactsOpen,
 }: Props) {
   return (
     <div
@@ -64,7 +70,18 @@ export default function Navbar({
         >
           <NavbarIcons icon={safari} name="Safari" alt="safari browser" />
         </li>
-        <li>
+        <li
+          className={
+            contactsOpen
+              ? "after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white"
+              : ""
+          }
+          onClick={() => {
+            setContactsOpen(true);
+            setContactsMinimised(false);
+            setAppOpen("Contacts");
+          }}
+        >
           <NavbarIcons
             icon={contacts}
             name="Contacts"
