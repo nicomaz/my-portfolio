@@ -19,7 +19,7 @@ export default function IndivNote({
 }: Props) {
   return (
     <div
-      className={`w-full h-14 pl-3 pt-1 ${
+      className={`w-full pl-4 py-3 ${
         noteClicked === note.id
           ? "dark:bg-blue-900 bg-blue-300"
           : "bg-none dark:bg-none"

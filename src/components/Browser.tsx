@@ -1,6 +1,6 @@
 import Draggable from "react-draggable";
 import Buttons from "./Buttons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BrowserTabs from "./BrowserTabs";
 import Media from "react-media";
 import BrowserMenu from "./BrowserMenu";
@@ -13,8 +13,10 @@ import TabsMenu from "./TabsMenu";
 interface Props {
   setBrowserOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setBrowserMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  setAppClicked: React.Dispatch<React.SetStateAction<string>>;
   browserOpen: boolean;
   browserMinimised: boolean;
+  appClicked: string;
 }
 
 export default function Browser({
@@ -22,22 +24,26 @@ export default function Browser({
   setBrowserOpen,
   browserMinimised,
   browserOpen,
+  setAppClicked,
+  appClicked,
 }: Props) {
   const [activeTab, setActiveTab] = useState<string>("About Me");
   const [showTabs, setShowTabs] = useState<boolean>(false);
   const [browserExpanded, setBrowserExpanded] = useState<boolean>(false);
   const [section, setSection] = useState<string>("");
 
-  useEffect(() => {
-    console.log(activeTab);
-  }, [activeTab]);
-
   return (
     <Draggable handle=".handle">
       <div
-        className={` ${
-          browserMinimised && "z-[-1]"
-        } flex justify-center sm:items-center absolute w-content h-content z-20`}
+        className={` ${browserMinimised && "z-[-1]"} ${
+          appClicked === "Browser" ? "z-20" : "z-10"
+        } flex justify-center sm:items-center absolute w-content h-content`}
+        onClick={() => {
+          setAppClicked("Browser");
+        }}
+        onDrag={() => {
+          setAppClicked("Browser");
+        }}
       >
         <div
           className={

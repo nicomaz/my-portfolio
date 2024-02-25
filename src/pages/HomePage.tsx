@@ -16,6 +16,7 @@ export default function HomePage({ fade }: Props) {
   const [browserOpen, setBrowserOpen] = useState<boolean>(false);
   const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
   const [appOpen, setAppOpen] = useState("Notepad");
+  const [appClicked, setAppClicked] = useState("");
 
   return (
     <div
@@ -33,6 +34,8 @@ export default function HomePage({ fade }: Props) {
         <Header fade={fade} appOpen={appOpen} />
 
         <Notes
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
           setNotepadOpen={setNotepadOpen}
           notepadOpen={notepadOpen}
           setNoteMinimised={setNoteMinimised}
@@ -40,6 +43,8 @@ export default function HomePage({ fade }: Props) {
         />
 
         <Browser
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
           setBrowserOpen={setBrowserOpen}
           setBrowserMinimised={setBrowserMinimised}
           browserMinimised={browserMinimised}
