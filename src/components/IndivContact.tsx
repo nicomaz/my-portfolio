@@ -23,8 +23,8 @@ export default function IndivContact({ title, body, link, note }: Props) {
       <div className="flex flex-row items-center justify-center mb-8">
         <h3 className="text-2xl ml-4 dark:text-gray-200 mt-12">{title}</h3>
       </div>
-      <div className="grid grid-cols-3">
-        <span className="text-gray-500 dark:text-gray-400 text-end mr-2">
+      <div className="grid  sm:grid-cols-3">
+        <span className="text-gray-500 dark:text-gray-400 sm:text-end mr-2">
           home
         </span>
         {title === "Resume" ? (
@@ -34,10 +34,10 @@ export default function IndivContact({ title, body, link, note }: Props) {
             className="dark:text-gray-200 text-left"
             onClick={() => copyText()}
           >
-            {isTextCopied ? "Email copied" : body}
+            {isTextCopied ? "Email copied" : <span>{body}</span>}
           </button>
         ) : (
-          <span className="dark:text-gray-200 col-span-2">
+          <span className="dark:text-gray-200 sm:col-span-2">
             {link ? (
               <a href={link} target="_blank">
                 {link}
@@ -48,27 +48,29 @@ export default function IndivContact({ title, body, link, note }: Props) {
           </span>
         )}
 
-        <hr className="border-gray-300 col-span-3 my-1" />
-        <span className="text-gray-500 text-end mr-2 dark:text-gray-400">
+        <hr className="border-gray-300 sm:col-span-3 my-1" />
+        <span className="text-gray-500 sm:text-end mr-2 dark:text-gray-400">
           username
         </span>
         {title === "Email" ? (
-          <span></span>
+          <span>
+            <br />
+          </span>
         ) : (
-          <span className="dark:text-gray-200 col-span-2">{body}</span>
+          <span className="dark:text-gray-200 sm:col-span-2">{body}</span>
         )}
-        <hr className="border-gray-300 col-span-3 my-1" />
-        <span className="text-gray-500 text-end mr-2 dark:text-gray-400">
+        <hr className="border-gray-300 sm:col-span-3 my-1" />
+        <span className="text-gray-500 sm:text-end mr-2 dark:text-gray-400">
           note
         </span>
         {title === "Resume" ? (
-          <span className="dark:text-gray-200 col-span-2">
+          <span className="dark:text-gray-200 sm:col-span-2">
             <a href={link} download="Nicola_Mazuryk_CV.pdf">
               {note}
             </a>
           </span>
         ) : (
-          <span className="dark:text-gray-200 col-span-2">{note}</span>
+          <span className="dark:text-gray-200 sm:col-span-2">{note}</span>
         )}
       </div>
     </div>

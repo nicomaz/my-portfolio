@@ -11,6 +11,7 @@
   overflow: hidden;
 }
 
+
 /* Animations for page transtions */
 .fade {
   animation: fade 300ms forwards;
