@@ -26,15 +26,15 @@ export default function Projects({ browserExpanded }: Props) {
       </div>
       <hr className="w-full" />
       {tabClicked === "All" ? (
-        <div className="sm:ml-[6.5rem] mt-2 mb-24 sm:pl-12">
+        <div className="sm:ml-[6.5rem] mt-2 mb-10 sm:pl-12">
           <ResultsContainer />
         </div>
       ) : tabClicked === "Images" ? (
-        <div className="mt-2 mb-24 sm:ml-[-3rem] sm:pl-12">
+        <div className="mt-2 mb-10 sm:ml-[-3rem] sm:pl-12">
           <DuckImages browserExpanded={browserExpanded} />
         </div>
       ) : (
-        <div className="mt-2 mb-24 sm:ml-[-3rem] sm:pl-12">
+        <div className="mt-2 mb-10 sm:ml-[-3rem] sm:pl-12">
           <DuckVideos />
         </div>
       )}
