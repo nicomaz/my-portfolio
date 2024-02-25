@@ -11,6 +11,7 @@ import sideQuestProgression from "../assets/SideQuestProgression.png";
 import sideQuestSignIn from "../assets/SideQuestSignIn.png";
 import sideQuestSignUp from "../assets/SideQuestSignUp.png";
 import sideQuestCard from "../assets/SideQuestCard.png";
+import CV from "../assets/Nicola_Mazuryk_CV.pdf";
 
 type NoteInfo = {
   title: string;
@@ -33,6 +34,13 @@ type ProjectImages = {
   projectLink: string;
   githubLink?: string;
   id: number;
+};
+
+type ContactInfo = {
+  title: string;
+  link?: string;
+  body?: string;
+  note?: string;
 };
 
 export const NoteInfo: NoteInfo[] = [
@@ -187,5 +195,27 @@ export const projectImages: ProjectImages[] = [
     title: "SideQuest quest clicked on map",
     projectLink: "https://github.com/nicomaz/side-quest",
     id: 14,
+  },
+];
+
+export const ContactInfo: ContactInfo[] = [
+  { title: "Email", body: "nicolamazuryk@gmail.com", note: "Click on my email to copy"},
+  {
+    title: "GitHub",
+    body: "nicomaz",
+    link: "https://github.com/nicomaz/",
+    note: "Check out my projects on github!",
+  },
+  {
+    title: "LinkedIn",
+    body: "nicolamazuryk",
+    link: "https://www.linkedin.com/in/nicolamazuryk/",
+    note: "Feel free to connect with me on LinkedIn",
+  },
+  {
+    title: "Resume",
+    link: CV,
+    note: "Click to download my resume",
+    body: "Nicola_Mazuryk_CV.pdf",
   },
 ];

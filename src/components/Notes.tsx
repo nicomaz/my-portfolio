@@ -8,8 +8,10 @@ import Draggable from "react-draggable";
 interface Props {
   setNotepadOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setNoteMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  setAppClicked: React.Dispatch<React.SetStateAction<string>>;
   notepadOpen: boolean;
   noteMinimised: boolean;
+  appClicked: string;
 }
 
 export default function Notes({
@@ -17,13 +19,25 @@ export default function Notes({
   notepadOpen,
   setNoteMinimised,
   noteMinimised,
+  setAppClicked,
+  appClicked,
 }: Props) {
   const [noteClicked, setNoteClicked] = useState<number>(1);
   const [noteExpanded, setNoteExpanded] = useState<boolean>(false);
 
   return (
     <Draggable handle=".handle">
-      <div className="flex justify-center sm:items-center absolute w-content h-content">
+      <div
+        className={`  ${
+          appClicked === "Notes" ? "z-20" : "z-10"
+        } flex justify-center sm:items-center absolute w-content h-content`}
+        onClick={() => {
+          setAppClicked("Notes");
+        }}
+        onDrag={() => {
+          setAppClicked("Notes");
+        }}
+      >
         <div
           className={
             notepadOpen
@@ -47,10 +61,6 @@ export default function Notes({
               setWindowMinimised={setNoteMinimised}
             />
 
-            <input
-              className="w-[95%] h-8 bg-white rounded-lg block border-[0.5px] border-gray-500 mb-2 dark:bg-slate-400 text-base sm:text-sm mx-auto"
-              placeholder="Search"
-            />
             <ul>
               {NoteInfo.map((note) => {
                 return (

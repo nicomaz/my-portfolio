@@ -1,8 +1,8 @@
 interface Props {
   setWindowOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setWindowExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  setWindowExpanded?: React.Dispatch<React.SetStateAction<boolean>>;
   setWindowMinimised: React.Dispatch<React.SetStateAction<boolean>>;
-  windowExpanded: boolean;
+  windowExpanded?: boolean;
 }
 
 export default function Buttons({
@@ -25,12 +25,16 @@ export default function Buttons({
           setWindowMinimised(true);
         }}
       />
-      <button
-        className="bg-green-500 rounded-2xl size-4 border-[0.5px] border-gray-400"
-        onClick={() => {
-          setWindowExpanded(!windowExpanded);
-        }}
-      />
+      {windowExpanded === undefined ? (
+        <button className="bg-gray-500 rounded-2xl size-4 border-[0.5px] border-gray-400" />
+      ) : (
+        <button
+          className="bg-green-500 rounded-2xl size-4 border-[0.5px] border-gray-400"
+          onClick={() => {
+            setWindowExpanded?.(!windowExpanded);
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Notes from "../components/Notes";
 import Browser from "../components/Browser";
+import Contacts from "../components/Contacts";
 
 interface Props {
   fade: boolean;
@@ -15,6 +16,10 @@ export default function HomePage({ fade }: Props) {
   const [noteMinimised, setNoteMinimised] = useState<boolean>(false);
   const [browserOpen, setBrowserOpen] = useState<boolean>(false);
   const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
+  const [contactsOpen, setContactsOpen] = useState<boolean>(false);
+  const [contactsMinimised, setContactsMinimised] = useState<boolean>(false);
+  const [appOpen, setAppOpen] = useState("Notepad");
+  const [appClicked, setAppClicked] = useState("");
 
   return (
     <div
@@ -29,9 +34,11 @@ export default function HomePage({ fade }: Props) {
       }}
     >
       <div className="w-screen h-screen">
-        <Header fade={fade} />
+        <Header fade={fade} appOpen={appOpen} />
 
         <Notes
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
           setNotepadOpen={setNotepadOpen}
           notepadOpen={notepadOpen}
           setNoteMinimised={setNoteMinimised}
@@ -39,10 +46,21 @@ export default function HomePage({ fade }: Props) {
         />
 
         <Browser
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
           setBrowserOpen={setBrowserOpen}
           setBrowserMinimised={setBrowserMinimised}
           browserMinimised={browserMinimised}
           browserOpen={browserOpen}
+        />
+
+        <Contacts
+          setAppClicked={setAppClicked}
+          appClicked={appClicked}
+          setContactsMinimised={setContactsMinimised}
+          setContactsOpen={setContactsOpen}
+          contactsMinimised={contactsMinimised}
+          contactsOpen={contactsOpen}
         />
 
         <Navbar
@@ -53,6 +71,10 @@ export default function HomePage({ fade }: Props) {
           setBrowserOpen={setBrowserOpen}
           setBrowserMinimised={setBrowserMinimised}
           browserOpen={browserOpen}
+          setAppOpen={setAppOpen}
+          setContactsOpen={setContactsOpen}
+          setContactsMinimised={setContactsMinimised}
+          contactsOpen={contactsOpen}
         />
       </div>
     </div>

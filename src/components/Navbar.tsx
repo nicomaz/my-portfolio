@@ -13,6 +13,10 @@ interface Props {
   setBrowserOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setBrowserMinimised: React.Dispatch<React.SetStateAction<boolean>>;
   browserOpen: boolean;
+  setAppOpen: React.Dispatch<React.SetStateAction<string>>;
+  setContactsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setContactsMinimised: React.Dispatch<React.SetStateAction<boolean>>;
+  contactsOpen: boolean;
 }
 
 export default function Navbar({
@@ -22,11 +26,17 @@ export default function Navbar({
   setNotepadOpen,
   setBrowserOpen,
   setBrowserMinimised,
+  setAppOpen,
   browserOpen,
+  setContactsOpen,
+  setContactsMinimised,
+  contactsOpen,
 }: Props) {
   return (
     <div
-      className={`${fade ? "up" : ""} absolute bottom-0 sm:bottom-2 w-full flex justify-center`}
+      className={`${
+        fade ? "up" : ""
+      } absolute bottom-0 sm:bottom-2 w-full flex justify-center`}
     >
       <ul className="w-full lg:w-5/12 h-[4.9rem] dark:bg-slate-800/[0.6] bg-blue-200/[0.7] backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly items-center">
         <li className="after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white">
@@ -41,6 +51,7 @@ export default function Navbar({
           onClick={() => {
             setNotepadOpen(true);
             setNoteMinimised(false);
+            setAppOpen("Notepad");
           }}
         >
           <NavbarIcons icon={notepad} name="Notes" alt="notepad" />
@@ -54,11 +65,23 @@ export default function Navbar({
           onClick={() => {
             setBrowserOpen(true);
             setBrowserMinimised(false);
+            setAppOpen("Browser");
           }}
         >
           <NavbarIcons icon={safari} name="Safari" alt="safari browser" />
         </li>
-        <li>
+        <li
+          className={
+            contactsOpen
+              ? "after:bg-black after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white"
+              : ""
+          }
+          onClick={() => {
+            setContactsOpen(true);
+            setContactsMinimised(false);
+            setAppOpen("Contacts");
+          }}
+        >
           <NavbarIcons
             icon={contacts}
             name="Contacts"
