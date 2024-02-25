@@ -2,16 +2,16 @@ import { useState } from "react";
 
 interface Props {
   title: string;
-  body: string;
-  link: string;
-  note: string;
+  body?: string;
+  link?: string;
+  note?: string;
 }
 
 export default function IndivContact({ title, body, link, note }: Props) {
   const [isTextCopied, setIsTextedCopied] = useState<boolean>(false);
 
   function copyText() {
-    navigator.clipboard.writeText(body);
+    navigator.clipboard.writeText(body || "nicolamazuryk@gmail.com");
     setIsTextedCopied(true);
     setTimeout(() => {
       setIsTextedCopied(false);
@@ -21,8 +21,7 @@ export default function IndivContact({ title, body, link, note }: Props) {
   return (
     <div className="mx-8 my-8">
       <div className="flex flex-row items-center justify-center mb-8">
-        <div className="bg-gray-300 size-16 rounded-full" />
-        <h3 className="text-2xl ml-4 dark:text-gray-200">{title}</h3>
+        <h3 className="text-2xl ml-4 dark:text-gray-200 mt-12">{title}</h3>
       </div>
       <div className="grid grid-cols-3">
         <span className="text-gray-500 dark:text-gray-400 text-end mr-2">
@@ -39,7 +38,13 @@ export default function IndivContact({ title, body, link, note }: Props) {
           </button>
         ) : (
           <span className="dark:text-gray-200 col-span-2">
-            {link ? link : body}
+            {link ? (
+              <a href={link} target="_blank">
+                {link}
+              </a>
+            ) : (
+              body
+            )}
           </span>
         )}
 

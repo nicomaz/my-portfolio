@@ -21,7 +21,6 @@ export default function Contacts({
   contactsMinimised,
   appClicked,
 }: Props) {
-  const [contactsExpanded, setContactsExpanded] = useState<boolean>(false);
   const [contactClicked, setContactClicked] = useState<string>("Email");
 
   return (
@@ -40,12 +39,8 @@ export default function Contacts({
         <div
           className={
             contactsOpen
-              ? contactsMinimised && !contactsExpanded
+              ? contactsMinimised
                 ? "hidden-anim xl:w-4/6 xl:h-4/6 h-[calc(100%-79px-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
-                : contactsExpanded
-                ? contactsMinimised
-                  ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                  : "mx-0 h-[calc(100vh-111px)] w-screen sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
                 : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[50rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }
@@ -55,8 +50,6 @@ export default function Contacts({
             <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute" />
             <Buttons
               setWindowOpen={setContactsOpen}
-              setWindowExpanded={setContactsExpanded}
-              windowExpanded={contactsExpanded}
               setWindowMinimised={setContactsMinimised}
             />
             <ul className="mx-3 pb-4">
