@@ -199,21 +199,21 @@ export const projectImages: ProjectImages[] = [
 ];
 
 export const ContactInfo: ContactInfo[] = [
-  { title: "email", body: "nicolamazuryk@gmail.com", note: "" },
+  { title: "Email", body: "nicolamazuryk@gmail.com", note: "" },
   {
-    title: "github",
+    title: "GitHub",
     body: "nicomaz",
     link: "https://github.com/nicomaz/",
     note: "Check out my projects on github!",
   },
   {
-    title: "linkedin",
+    title: "LinkedIn",
     body: "NicolaMazuryk",
     link: "https://www.linkedin.com/in/nicolamazuryk/",
     note: "Feel free to connect with me on linkedin",
   },
   {
-    title: "resume",
+    title: "Resume",
     link: CV,
     note: "Click to download my resume",
     body: "Nicola_Mazuryk_CV.pdf",

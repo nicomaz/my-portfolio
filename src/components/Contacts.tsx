@@ -1,6 +1,7 @@
 import Draggable from "react-draggable";
 import Buttons from "./Buttons";
 import { useState } from "react";
+import { ContactInfo } from "../utils/data";
 
 interface Props {
   setContactsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,6 +21,7 @@ export default function Contacts({
   appClicked,
 }: Props) {
   const [contactsExpanded, setContactsExpanded] = useState<boolean>(false);
+  const [contactClicked, setContactClicked] = useState<string>("email");
 
   return (
     <Draggable handle=".handle">
@@ -56,6 +58,32 @@ export default function Contacts({
               windowExpanded={contactsExpanded}
               setWindowMinimised={setContactsMinimised}
             />
+            <ul className="mx-3 pb-4">
+              {ContactInfo.map((contact) => {
+                return (
+                  <div>
+                    <h2 className="font-bold dark:text-gray-300 w-full pl-3 py-1 text-gray-500 text-sm">
+                      {contact.title[0].toUpperCase()}
+                      <hr className="ml-[-10px] mt-1 border-gray-400 mr-1" />
+                    </h2>
+                    <div
+                      className={`w-full pl-4 py-3 ${
+                        contactClicked === contact.title
+                          ? "dark:bg-blue-900 bg-blue-300 rounded-xl"
+                          : "bg-none dark:bg-none"
+                      }`}
+                      onClick={() => {
+                        setContactClicked(contact.title);
+                      }}
+                    >
+                      <h3 className="font-bold dark:text-white">
+                        {contact.title}
+                      </h3>
+                    </div>
+                  </div>
+                );
+              })}
+            </ul>
           </div>
           <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg"></div>
         </div>
