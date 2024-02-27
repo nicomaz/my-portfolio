@@ -22,7 +22,7 @@ export default function AboutMe({
     <div
       className={` ${
         browserExpanded
-          ? "h-[calc(100vh-240px)]"
+          ? "h-[calc(100vh-205px)]"
           : "h-[calc(100vh-15rem)] sm:h-[30rem]"
       } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 sm:px-14 px-2 overflow-scroll`}
     >
