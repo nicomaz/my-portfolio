@@ -14,7 +14,7 @@ export default function Tab({ tabName, setActiveTab, activeTab }: Props) {
   return (
     <>
       <li
-        className={
+        className={ ` browser ${
           activeTab === tabName
             ? ` ${
                 theme === "dark" && "dark"
@@ -25,7 +25,7 @@ export default function Tab({ tabName, setActiveTab, activeTab }: Props) {
               } bg-slate-200 dark:bg-slate-600 w-[10rem] h-[calc(100%-0.5rem)] relative top-full translate-y-[-100%] rounded-t-lg overflow-visible before:size-[0.5rem] before:bg-[#dadfef] before:bottom-0 before:absolute before:-left-2 after:size-[1rem] after:bottom-0 after:absolute after:-right-4 after:rounded-3xl not-active z-30`
             : ` ${
                 theme === "dark" && "dark"
-              } bg-slate-200 dark:bg-slate-600 w-[10rem] h-[calc(100%-0.5rem)] relative top-full translate-y-[-100%] rounded-t-lg overflow-visible before:size-[0.5rem] before:bg-[#dadfef] before:bottom-0 before:absolute before:-left-2 after:size-[1rem] after:bottom-0 after:absolute after:-right-4 after:rounded-3xl not-active`
+              } bg-slate-200 dark:bg-slate-600 w-[10rem] h-[calc(100%-0.5rem)] relative top-full translate-y-[-100%] rounded-t-lg overflow-visible before:size-[0.5rem] before:bg-[#dadfef] before:bottom-0 before:absolute before:-left-2 after:size-[1rem] after:bottom-0 after:absolute after:-right-4 after:rounded-3xl not-active`}`
         }
         onClick={() => {
           setActiveTab(tabName);

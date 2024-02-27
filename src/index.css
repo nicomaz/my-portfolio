@@ -11,7 +11,6 @@
   overflow: hidden;
 }
 
-
 /* Animations for page transtions */
 .fade {
   animation: fade 300ms forwards;
@@ -309,8 +308,12 @@ li.active:last-child::after {
 }
 
 /* circle right of first child */
-li:first-child::after {
+li.browser:first-child::after {
   background-color: #e2e8f0;
+}
+
+li.dark.browser:first-child::after {
+  background-color: #475569;
 }
 
 /* square to the left of last child */
