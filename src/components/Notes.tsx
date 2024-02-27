@@ -30,7 +30,7 @@ export default function Notes({
       <div
         className={`  ${
           appClicked === "Notes" ? "z-20" : "z-10"
-        } flex justify-center sm:items-center absolute w-content h-content`}
+        } flex justify-center sm:items-center absolute w-content h-content ${noteExpanded ? "center" : ""} `}
         onClick={() => {
           setAppClicked("Notes");
         }}
