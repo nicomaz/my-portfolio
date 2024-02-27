@@ -27,13 +27,11 @@ export default function IndivTab({
           alt={alt}
           className="object-contain min-w-36 max-w-36 rounded-md"
         />
-        <div className="absolute w-36 h-6 dark:bg-gray-900/[0.9] bg-gray-200/[0.9] pt-1 top-0 text-xs pl-2 truncate">
+        <div className="absolute w-36 h-6 dark:bg-gray-900/[0.9] bg-[#ccd4e8]/[0.9] pt-1 top-0 text-xs pl-2 truncate">
           {tabName}
           {website}
         </div>
       </div>
-
-      {/* <span className=" text-center"> {tabName}</span> */}
     </div>
   );
 }

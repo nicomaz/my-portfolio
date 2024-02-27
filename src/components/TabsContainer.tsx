@@ -14,10 +14,10 @@ export default function TabsContainer({
   activeTab,
 }: Props) {
   return (
-    <div className="h-[calc(100vh-12rem)] w-full bg-gray-100 dark:bg-slate-800 dark:text-gray-100 flex flex-row gap-12 flex-wrap justify-center content-center relative">
-      <div className="w-full h-12 bg-gray-300 dark:bg-slate-600 absolute top-0 text-center py-3 grid grid-cols-3 font-semibold">
+    <div className="h-[calc(100vh-12rem)] w-full bg-gray-100 dark:bg-slate-800 dark:text-gray-100 flex flex-row gap-12 flex-wrap justify-center content-center relative ">
+      <div className="w-full h-12 bg-[#ccd4e8] dark:bg-slate-600 absolute top-0 text-center py-3 grid grid-cols-3 font-semibold">
         <div>&nbsp;</div>
-        <div className="drop-shadow-2xl text-center">Open Tabs</div>
+        <div className="drop-shadow-2xl text-center ">Open Tabs</div>
         <div className="mr-4 text-right" onClick={() => setShowTabs(false)}>
           Done
         </div>

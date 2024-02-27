@@ -64,7 +64,7 @@ export default function Browser({
             {(matches) =>
               matches.small ? (
                 <div>
-                  <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg">
+                  <div className="flex flex-row bg-[#ccd4e8] w-full h-[2.5rem] rounded-t-lg dark:bg-slate-600">
                     <Buttons
                       setWindowOpen={setBrowserOpen}
                       setWindowMinimised={setBrowserMinimised}
