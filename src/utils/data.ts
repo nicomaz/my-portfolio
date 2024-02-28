@@ -20,6 +20,7 @@ type NoteInfo = {
   shortDate: string;
   body: string[];
   id: number;
+  link?: string;
 };
 
 type Skills = {
@@ -69,11 +70,12 @@ export const NoteInfo: NoteInfo[] = [
     id: 2,
   },
   {
-    title: "Canned tomatoes",
+    title: "Attributes",
     date: "December 14, 2023, 8:32am",
     shortDate: "23/1/24",
-    header: "Canned tomatoes",
-    body: ["Broccoli", "Basmati rice", "Milk", "Chocolates!!!"],
+    header: "Attributes",
+    body: ["Wallpaper by Richard Horvath on Unsplash",],
+    link: "https://unsplash.com/photos/yellow-and-white-abstract-painting-_nWaeTF6qo0",
     id: 3,
   },
 ];
@@ -199,7 +201,11 @@ export const projectImages: ProjectImages[] = [
 ];
 
 export const ContactInfo: ContactInfo[] = [
-  { title: "Email", body: "nicolamazuryk@gmail.com", note: "Click on my email to copy"},
+  {
+    title: "Email",
+    body: "nicolamazuryk@gmail.com",
+    note: "Click on my email to copy",
+  },
   {
     title: "GitHub",
     body: "nicomaz",

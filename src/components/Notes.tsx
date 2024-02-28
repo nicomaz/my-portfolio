@@ -30,7 +30,9 @@ export default function Notes({
       <div
         className={`  ${
           appClicked === "Notes" ? "z-20" : "z-10"
-        } flex justify-center sm:items-center absolute w-content h-content ${noteExpanded ? "center" : ""} `}
+        } flex justify-center sm:items-center absolute w-content h-content ${
+          noteExpanded ? "center" : ""
+        } `}
         onClick={() => {
           setAppClicked("Notes");
         }}
@@ -46,7 +48,7 @@ export default function Notes({
                 : noteExpanded
                 ? noteMinimised
                   ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                  : "mx-0 h-[calc(100vh-111px)] w-full sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                  : "mx-0 h-[calc(100vh-111px)] w-screen sm:h-[calc(100vh-120px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
                 : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[80rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }

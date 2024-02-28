@@ -11,7 +11,7 @@ export default function Header({ appOpen = "Portfolio", fade }: Props) {
     <div
       className={`
         ${
-          fade ? "down" : "h-8"
+          fade ? "down" : "h-7"
         } dark:bg-slate-800/[0.6] bg-blue-200/[0.7] backdrop-blur-[3px] w-screen drop-shadow-lg h-shadow z-30 font-medium`}
     >
       <div>
@@ -28,8 +28,8 @@ export default function Header({ appOpen = "Portfolio", fade }: Props) {
         </span>
         <span
           className={` ${
-            fade ? "text-down" : "top-[-12px]"
-          } relative left-16 dark:text-white`}
+            fade ? "text-down" : "top-[-11px]"
+          } relative left-14 dark:text-white`}
         >
           {appOpen}
         </span>
