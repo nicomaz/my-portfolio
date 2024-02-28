@@ -19,11 +19,14 @@ export default function SingleImage({
   setImageClicked,
 }: Props) {
   return (
-    <div className="grid cursor-pointer" onClick={() => setImageClicked(id)}>
+    <div
+      className="grid cursor-pointer text-center justify-center"
+      onClick={() => setImageClicked(id)}
+    >
       <div
         className={`${
-          browserExpanded ? "h-52 w-64" : "h-32 w-44"
-        } overflow-hidden grid`}
+          browserExpanded ? "sm:h-52 sm:w-64" : "sm:h-32 sm:w-44"
+        } overflow-hidden grid w-44 h-24`}
       >
         <img src={image} alt={alt} className="object-scale-down" />
       </div>

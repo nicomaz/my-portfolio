@@ -18,7 +18,7 @@ export default function DuckImages({ browserExpanded }: Props) {
 
   return (
     <div
-      className="grid grid-cols-2 md:grid-cols-5 gap-y-3 w-full h-fit px-2 sm:px-0"
+      className="grid grid-cols-2 md:grid-cols-5 gap-y-3 w-full h-fit sm:px-0 self-center"
       onClick={() => {
         setExpandImage(true);
       }}

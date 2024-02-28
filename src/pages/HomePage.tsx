@@ -18,7 +18,7 @@ export default function HomePage({ fade }: Props) {
   const [browserMinimised, setBrowserMinimised] = useState<boolean>(false);
   const [contactsOpen, setContactsOpen] = useState<boolean>(false);
   const [contactsMinimised, setContactsMinimised] = useState<boolean>(false);
-  const [appOpen, setAppOpen] = useState("Notepad");
+  const [appOpen, setAppOpen] = useState("Notes");
   const [appClicked, setAppClicked] = useState("");
 
   return (

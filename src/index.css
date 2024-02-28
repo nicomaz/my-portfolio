@@ -11,7 +11,6 @@
   overflow: hidden;
 }
 
-
 /* Animations for page transtions */
 .fade {
   animation: fade 300ms forwards;
@@ -53,42 +52,6 @@
 
 .hidden-anim {
   animation: hide 0.5s forwards;
-}
-
-/* aurora background */
-.dark-aurora-outer {
-  background: linear-gradient(45deg, #260ec1 0%, #155a85 49%, #061175 82%);
-  background-size: 200%;
-  animation: aurora 10s infinite;
-  backdrop-filter: saturate(150%);
-  -webkit-backdrop-filter: saturate(150%);
-}
-
-.dark-aurora-inner {
-  background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-  background-size: 200%;
-  animation: aurora 7s infinite;
-  backdrop-filter: saturate(150%);
-  -webkit-backdrop-filter: saturate(150%);
-}
-
-.light-aurora-outer {
-  background: linear-gradient(45deg, #719fc9 0%, #a4d6f5 49%, #b6b4f4 82%);
-  background-size: 200%;
-  animation: aurora 10s infinite;
-  backdrop-filter: saturate(150%);
-  -webkit-backdrop-filter: saturate(150%);
-}
-
-.light-aurora-inner {
-  background: radial-gradient(
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.15)
-  );
-  background-size: 200%;
-  animation: aurora 7s infinite;
-  backdrop-filter: saturate(150%);
-  -webkit-backdrop-filter: saturate(150%);
 }
 
 .h-shadow {
@@ -190,7 +153,7 @@
     opacity: 0.3;
   }
   100% {
-    height: 31px;
+    height: 28px;
     transform: scale(1);
     opacity: 1;
   }
@@ -223,7 +186,7 @@
     top: -45px;
   }
   to {
-    top: -13px;
+    top: -11.5px;
   }
 }
 
@@ -251,17 +214,22 @@ nav li.notes {
   box-shadow: 0px -0.4px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
+/* browser tab shadow */
 li.active {
-  box-shadow: 0px -1px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -0.5px 0px 0.5px rgba(0, 0, 0, 0.1);
 }
 
 .top-shadow {
-  box-shadow: 0px -1px 0px 0.2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -0.5px 0px 0.2px rgba(0, 0, 0, 0.1);
 }
 
 /* square to left of first child */
 li.active:first-child::before {
-  background-color: #c8defc;
+  background-color: #bfdbfe;
+}
+
+li.not-active:first-child::before {
+  background-color: #e2e8f0;
 }
 
 li.dark.active:first-child::before {
@@ -309,8 +277,12 @@ li.active:last-child::after {
 }
 
 /* circle right of first child */
-li:first-child::after {
+li.browser:first-child::after {
   background-color: #e2e8f0;
+}
+
+li.dark.browser:first-child::after {
+  background-color: #475569;
 }
 
 /* square to the left of last child */
