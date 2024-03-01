@@ -19,11 +19,11 @@ export default function IndivContact({ title, body, link, note }: Props) {
   }
 
   return (
-    <div className="mx-8 my-8">
+    <div className="mx-8 my-8 break-all">
       <div className="flex flex-row items-center justify-center mb-8">
         <h3 className="text-2xl ml-4 dark:text-gray-200 mt-12">{title}</h3>
       </div>
-      <div className="grid  sm:grid-cols-3">
+      <div className="grid sm:grid-cols-3">
         <span className="text-gray-500 dark:text-gray-400 sm:text-end mr-2">
           home
         </span>
