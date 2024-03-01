@@ -14,7 +14,7 @@ export default function NavbarIcons({ icon, name, alt }: Props) {
     <>
       {showLabel && <NavbarLabel name={name} />}
       <div
-        className="size-16 opacity-95 drop-shadow-md cursor-pointer sm:mx-4"
+        className="size-10 sm:size-16 opacity-95 drop-shadow-md cursor-pointer sm:mx-4"
         onMouseOver={() => {
           setShowLabel(true);
         }}
