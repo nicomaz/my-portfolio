@@ -35,7 +35,7 @@ export default function Navbar({
     <div
       className={`${
         fade ? "sm:up up-mobile" : ""
-      } absolute bottom-0 sm:bottom-2 w-full flex justify-center h-14`}
+      } absolute bottom-0 sm:bottom-2 w-full flex justify-center h-14 sm:h-[4.7rem]`}
     >
       <ul className="w-full lg:w-5/12 sm:h-[4.9rem] dark:bg-slate-800/[0.6] bg-blue-200/[0.7] backdrop-blur-[3px] rounded-2xl h-shadow flex flex-row justify-evenly items-center">
         <li className="after:bg-gray-900 after:rounded-2xl after:block after:m-auto after:size-1.5 after:dark:bg-white">

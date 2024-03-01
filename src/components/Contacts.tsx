@@ -28,7 +28,7 @@ export default function Contacts({
       <div
         className={`  ${
           appClicked === "Contacts" ? "z-20" : "z-10"
-        } flex justify-center sm:items-center absolute w-content h-content top-[calc(100vh/4)] left-[calc(100vw/4)]`}
+        } flex justify-center sm:items-center absolute w-screen h-content sm:top-[calc(100vh/4)] sm:left-[calc(100vw/4)]`}
         onClick={() => {
           setAppClicked("Contacts");
         }}
@@ -40,8 +40,8 @@ export default function Contacts({
           className={
             contactsOpen
               ? contactsMinimised
-                ? "hidden-anim xl:w-4/6 xl:h-4/6 h-[calc(100%-79px-2rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
-                : "w-screen h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[50rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                ? "hidden-anim xl:w-4/6 xl:h-4/6 h-[calc(100vh-10.3rem)] sm:h-4/6 backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                : "w-screen h-[calc(100vh-10.3rem)] sm:h-5/6 sm:w-[50rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }
         >
