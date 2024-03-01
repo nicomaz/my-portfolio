@@ -7,6 +7,8 @@ interface Props {
 export default function IndivNoteBody({ noteClicked }: Props) {
   const note = NoteInfo.find((note) => note.id === noteClicked)!;
   const body = note.body;
+  const link = note.link;
+  const linkable = note.linkable;
 
   return (
     <div className="mx-5 sm:h-[50vh] ">
@@ -28,7 +30,16 @@ export default function IndivNoteBody({ noteClicked }: Props) {
       <p className="font-medium dark:text-white">
         <h2 className="text-xl font-bold mb-3">{note.header}</h2>
         {body.map((noteLine) => {
-          return <p className="mb-4">{noteLine}</p>;
+          return (
+            <p className="mb-4">
+              {noteLine}{" "}
+              <a href={link} target="_blank">
+                <span className="font-bold underline underline-offset-1">
+                  {linkable}
+                </span>
+              </a>
+            </p>
+          );
         })}
       </p>
     </div>

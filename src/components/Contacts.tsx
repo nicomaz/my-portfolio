@@ -28,7 +28,7 @@ export default function Contacts({
       <div
         className={`  ${
           appClicked === "Contacts" ? "z-20" : "z-10"
-        } flex justify-center sm:items-center absolute w-content h-content`}
+        } flex justify-center sm:items-center absolute w-content h-content top-[calc(100vh/4)] left-[calc(100vw/4)]`}
         onClick={() => {
           setAppClicked("Contacts");
         }}

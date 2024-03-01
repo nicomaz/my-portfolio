@@ -21,6 +21,7 @@ type NoteInfo = {
   body: string[];
   id: number;
   link?: string;
+  linkable?: string;
 };
 
 type Skills = {
@@ -63,9 +64,8 @@ export const NoteInfo: NoteInfo[] = [
     shortDate: "23/1/24",
     header: "Welcome to my desktop!",
     body: [
-      "Feel free to traverse my desktop. You can learn more about me and my project using Firefox.",
-      "Want to reach out to me? Contacts will have all you need.",
-      "Suddenly feel the urge to solve a math problem? There's even a calculator.",
+      "Feel free to traverse my desktop. You can learn more about me and my project using Safari.",
+      "Want to reach out to me? Contacts will have all my details.",
     ],
     id: 2,
   },
@@ -74,8 +74,9 @@ export const NoteInfo: NoteInfo[] = [
     date: "December 14, 2023, 8:32am",
     shortDate: "23/1/24",
     header: "Attributes",
-    body: ["Wallpaper by Richard Horvath on Unsplash",],
+    body: ["Wallpaper by Richard Horvath on"],
     link: "https://unsplash.com/photos/yellow-and-white-abstract-painting-_nWaeTF6qo0",
+    linkable: "Unsplash",
     id: 3,
   },
 ];

@@ -8,8 +8,8 @@ interface ThemeProviderProps {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
 }): JSX.Element => {
-  const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("ui.theme") as "light" | "dark") || "light"
+  const [theme, setTheme] = useState<"dark" | "light">(
+    (localStorage.getItem("ui.theme") as "light" | "dark") || "dark"
   );
 
   const toggleTheme = (): void => {

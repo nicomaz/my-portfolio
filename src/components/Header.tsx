@@ -1,3 +1,4 @@
+
 import Clock from "./Clock";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -7,6 +8,8 @@ interface Props {
 }
 
 export default function Header({ appOpen = "Portfolio", fade }: Props) {
+  console.log(appOpen);
+
   return (
     <div
       className={`

@@ -3,7 +3,6 @@ import safari from "../assets/safari.png";
 import NavbarIcons from "./NavbarIcons";
 import contacts from "../assets/contacts.png";
 import finder from "../assets/finder.png";
-import calculator from "../assets/calculator.png";
 
 interface Props {
   fade: boolean;
@@ -65,7 +64,7 @@ export default function Navbar({
           onClick={() => {
             setBrowserOpen(true);
             setBrowserMinimised(false);
-            setAppOpen("Browser");
+            setAppOpen("Safari");
           }}
         >
           <NavbarIcons icon={safari} name="Safari" alt="safari browser" />
@@ -87,9 +86,6 @@ export default function Navbar({
             name="Contacts"
             alt="apple contacts icon"
           />
-        </li>
-        <li>
-          <NavbarIcons icon={calculator} name="Calculator" alt="calculator" />
         </li>
       </ul>
     </div>
