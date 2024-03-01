@@ -18,7 +18,7 @@ export default function Projects({ browserExpanded }: Props) {
         browserExpanded
           ? "h-[calc(100vh-201px)]"
           : "h-[calc(100vh-15rem)] sm:h-[30rem]"
-      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 overflow-scroll`}
+      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pb-16 pt-1 overflow-scroll`}
     >
       <div className="sm:px-10 sm:pl-24">
         <DuckDuckGoSearch />

@@ -18,7 +18,7 @@ export default function MobileExpandedImage({
   setImageClicked,
 }: Props) {
   return (
-    <div className="absolute w-screen h-[calc(100vh-15.1rem)] bg-black top-10 left-0 overflow-hidden">
+    <div className="absolute w-screen h-[calc(100vh-19.6rem)] bg-black top-10 left-0 overflow-hidden">
       <img
         src={image}
         alt={alt}
