@@ -52,8 +52,8 @@ export default function Notes({
                 : noteExpanded
                 ? noteMinimised
                   ? "hidden-anim w-full h-[calc(100%-79px-2rem)] sm:h-full backdrop-blur-[2px]] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                  : "mx-0 h-[calc(100vh-111px)] w-screen sm:h-[calc(100vh-114px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
-                : "w-screen  h-[calc(100vh-7rem)] sm:h-5/6 sm:w-[80rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
+                  : "mx-0 h-[calc(100vh-10.4rem)] w-screen sm:h-[calc(100vh-114px)] backdrop-blur-[2px] rounded-lg grid grid-cols-3 border-[0.3px] border-gray-400 center"
+                : "w-screen h-[calc(100vh-10.4rem)] sm:h-5/6 sm:w-[80rem] backdrop-blur-[2px] rounded-lg drop-shadow-3xl h-shadow grid grid-cols-3 border-[0.3px] border-gray-400"
               : "hidden"
           }
         >

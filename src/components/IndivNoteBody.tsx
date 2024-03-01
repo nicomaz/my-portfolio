@@ -11,7 +11,7 @@ export default function IndivNoteBody({ noteClicked }: Props) {
   const linkable = note.linkable;
 
   return (
-    <div className="mx-5 sm:h-[50vh] overflow-scroll">
+    <div className="sm:mx-5 ml-4 pr-4 sm:h-[50vh] h-[calc(100vh-10.6rem)] overflow-scroll">
       <div className="flex flex-row justify-between items-center mt-4 mb-3 handle">
         <button className="h-7 w-10 bg-white rounded-lg dark:bg-slate-600 border-[0.5px] border-gray-300 dark:border-slate-800 border-solid">
           <span className="material-symbols-outlined dark:text-white">
