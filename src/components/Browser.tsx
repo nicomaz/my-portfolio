@@ -57,8 +57,8 @@ export default function Browser({
                 : browserExpanded
                 ? browserMinimised
                   ? "hidden-anim backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center absolute sm:relative"
-                  : "mx-0 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center w-screen h-[calc(100vh-111px)] w-full sm:h-[calc(100vh-120px)] sm:relative"
-                : "w-screen h-[calc(100vh-11.7rem)] sm:h-5/6 sm:w-[70rem] backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] sm:relative z-10"
+                  : "sm:mx-0 backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] center sm:w-screen w-full sm:h-[calc(100vh-120px)] sm:relative"
+                : "w-screen h-[calc(100vh-10.3rem)] sm:h-5/6 sm:w-[70rem] backdrop-blur-[1px] rounded-lg drop-shadow-3xl h-shadow border-[0.3px] border-gray-400 dark:bg-slate-900 bg-white/[0.8] sm:relative z-10"
               : "hidden z-[-1]"
           }
         >

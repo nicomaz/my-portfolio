@@ -24,7 +24,7 @@ export default function AboutMe({
         browserExpanded
           ? "h-[calc(100vh-201px)]"
           : "h-[calc(100vh-15rem)] sm:h-[30rem]"
-      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 sm:px-14 pb-24 px-2 overflow-scroll`}
+      } w-screen sm:w-full bg-white dark:bg-gray-900 dark:text-gray-200 rounded-b-xl pt-1 sm:px-14 pb-20 sm:pb-2 px-2 overflow-scroll`}
     >
       <div className="grid sm:grid-cols-[max-content_1fr]">
         <Media queries={{ small: { maxWidth: 599 } }}>
