@@ -32,10 +32,8 @@ export default function Notes({
       <div
         className={` ${fade ? "fade-in" : ""} ${
           appClicked === "Notes" ? "z-20" : "z-10"
-        } flex justify-center sm:items-center absolute w-content ${
-          noteExpanded
-            ? "center"
-            : "sm:top-[calc(100vh/6)] sm:left-[calc(100vw/10)]"
+        } flex justify-center sm:items-center absolute w-content max-w-[100vw] overflow-x-hidden ${
+          noteExpanded ? "center" : "sm:top-[calc(100vh/6)] sm:left-[calc(100vw/10)]"
         } `}
         onClick={() => {
           setAppClicked("Notes");
@@ -58,7 +56,7 @@ export default function Notes({
           }
         >
           <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute" />
-          <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-full">
+          <div className="col-span-1 dark:bg-slate-800/[0.9] bg-blue-100/[0.9] backdrop-blur-[2px] rounded-l-lg border-r-[1px] border-gray-500 max-w-[40vw]">
             <span className="handle w-[calc(100%-6rem)] col-span-3 h-10 ml-24 absolute" />
             <Buttons
               setWindowOpen={setNotepadOpen}
@@ -81,7 +79,7 @@ export default function Notes({
               })}
             </ul>
           </div>
-          <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg">
+          <div className="col-span-2 dark:bg-slate-900 bg-gray-200 rounded-r-lg max-w-[70vw]">
             <IndivNoteBody noteClicked={noteClicked} />
           </div>
         </div>
