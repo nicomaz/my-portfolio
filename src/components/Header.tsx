@@ -1,4 +1,3 @@
-
 import Clock from "./Clock";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -8,8 +7,6 @@ interface Props {
 }
 
 export default function Header({ appOpen = "Portfolio", fade }: Props) {
-  console.log(appOpen);
-
   return (
     <div
       className={`
@@ -31,7 +28,7 @@ export default function Header({ appOpen = "Portfolio", fade }: Props) {
         </span>
         <span
           className={` ${
-            fade ? "text-down" : "top-[-11px]"
+            fade ? "text-down" : "top-[-0.6rem]"
           } relative left-14 dark:text-white`}
         >
           {appOpen}
