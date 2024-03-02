@@ -13,7 +13,11 @@ export default function WikiContents({ setSection, section }: Props) {
     const element = document.getElementById(componentId);
     setSection(componentId);
     if (element) {
-      element.scrollIntoView({ behavior: "auto", block: "start" });
+      element.scrollIntoView({
+        behavior: "instant",
+        block: "nearest",
+        inline: "end",
+      });
     }
   };
 
