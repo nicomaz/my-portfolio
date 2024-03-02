@@ -15,7 +15,7 @@ export default function Clock() {
 
   return (
     <div className={`${theme}`}>
-      <span className="top-1 right-5 absolute text-base z-30 text-black dark:text-white">
+      <span className="top-0.5 right-5 absolute text-base z-30 text-black dark:text-white">
         {time}
       </span>
     </div>
