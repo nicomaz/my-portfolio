@@ -37,7 +37,7 @@ export default function Browser({
       <div
         className={` ${browserMinimised && "z-[-1]"} ${
           appClicked === "Browser" ? "z-20" : "z-10"
-        } flex justify-center absolute ${
+        } flex justify-center absolute max-w-full ${
           browserExpanded
             ? "center"
             : "sm:top-[calc(100vh/7)] sm:left-[calc(100vw/7)]"

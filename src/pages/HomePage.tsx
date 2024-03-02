@@ -62,6 +62,7 @@ export default function HomePage({ fade }: Props) {
               setAppOpen("Notes");
             }, 100);
           }}
+          className="relative w-full h-full"
         >
           <Notes
             setAppClicked={setAppClicked}
