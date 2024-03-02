@@ -23,9 +23,11 @@ export default function WikiContents({ setSection, section }: Props) {
         Contents
       </h3>
       <hr className="w-content ml-4" />
-      <ul className="text-sm pl-3 tracking-tight">
+      <ul className="text-sm pl-3 tracking-tight cursor-pointer">
         <li
-          className={`${section === " " ? "font-bold" : "font-medium"} ml-1 mt-1`}
+          className={`${
+            section === " " ? "font-bold" : "font-medium"
+          } ml-1 mt-1`}
           onClick={() => {
             scrollToComponent(" ");
           }}

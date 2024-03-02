@@ -29,12 +29,16 @@ export default function Header({ appOpen = "Portfolio", fade }: Props) {
         <span
           className={` ${
             fade ? "text-down" : "top-[-0.6rem]"
-          } relative left-14 dark:text-white`}
+          } relative left-14 dark:text-white cursor-default`}
         >
           {appOpen}
         </span>
       </div>
-      <span className={`${fade ? "time-down" : "top-0"} absolute right-0`}>
+      <span
+        className={`${
+          fade ? "time-down" : "top-0"
+        } absolute right-0 cursor-default`}
+      >
         <Clock />
       </span>
     </div>

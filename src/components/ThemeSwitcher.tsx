@@ -9,7 +9,7 @@ export default function ThemeSwitcher({ fade }: Props) {
   const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
-    <div className={fade ? "text-down left-5" : "left-5"}>
+    <div className={`cursor-pointer ${fade ? "text-down left-5" : "left-5"}`}>
       <h2 onClick={() => toggleTheme()}>
         {theme === "dark" ? (
           <svg
